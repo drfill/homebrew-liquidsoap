@@ -4,7 +4,6 @@ class Liquidsoap < Formula
   url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.0.0/liquidsoap-1.0.0-full.tar.bz2'
   homepage 'http://liquidsoap.fm/'
   md5 'e379caaf68b1141b0b34bdb3db14ab69'
-  version '1.0.0'
   head 'http://savonet.hg.sourceforge.net:8000/hgroot/savonet/savonet', :using => :hg
 
   depends_on 'objective-caml' => :build
@@ -26,18 +25,20 @@ class Liquidsoap < Formula
   depends_on "xmlm" if ARGV.include? "--with-lastfm" or ARGV.include? "--with-xmlplaylist"
   depends_on "sound-touch" if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
-  
+
   def options
     [['--with-samplerate', "Enables Samplerate library support"],
     ['--with-xmlplaylist', "Enables XmlPlaylist support"],
     ['--with-lastfm', "Enables LAST.fm support"],
-    ['--with-soundtouch', "Enables Soundtouch library support"], 
+    ['--with-soundtouch', "Enables Soundtouch library support"],
     ['--with-aacplus', "Enables AAC+ library support"],]
   end
 
   def install
+    ENV.llvm if ARGV.include? '--with-aacplus'
     ENV['MAKEFLAGS'] = "-j2"
     cp 'PACKAGES.minimal', 'PACKAGES'
+    system "./bootstrap" if ARGV.build_head?
     inreplace 'PACKAGES', 'ocaml-ao', '#ocaml-ao'  unless Formula.factory('libao').installed?
     inreplace 'PACKAGES', 'ocaml-ogg', '#ocaml-ogg'  unless Formula.factory('libogg').installed?
     inreplace 'PACKAGES', 'ocaml-vorbis', '#ocaml-vorbis'  unless Formula.factory('libvorbis').installed?
@@ -60,5 +61,9 @@ class Liquidsoap < Formula
     system 'make', 'doc'
     remove_file 'INSTALL'
     system 'make', 'install'
+  end
+
+  def test
+    system "#{bin}/liquidsoap --version"
   end
 end
