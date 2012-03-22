@@ -32,12 +32,14 @@ class Liquidsoap < Formula
   depends_on "xmlm" if ARGV.include? "--with-lastfm" or ARGV.include? "--with-xmlplaylist"
   depends_on "sound-touch" if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
+  depends_on "vo-aacenc" if ARGV.include? "--with-aac"
 
   def options
     [['--with-samplerate', "Enables Samplerate library support"],
     ['--with-xmlplaylist', "Enables XmlPlaylist support"],
     ['--with-lastfm', "Enables LAST.fm support"],
     ['--with-soundtouch', "Enables Soundtouch library support"],
+    ['--with-aac', "Enables AAC library support"],
     ['--with-aacplus', "Enables AAC+ library support"],]
   end
 
@@ -63,6 +65,7 @@ class Liquidsoap < Formula
     inreplace 'PACKAGES', '#ocaml-lastfm', 'ocaml-lastfm' if ARGV.include? "--with-lastfm"
     inreplace 'PACKAGES', '#ocaml-soundtouch', 'ocaml-soundtouch' if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
     inreplace 'PACKAGES', '#ocaml-aacplus', 'ocaml-aacplus' if ARGV.include? "--with-aacplus"
+    inreplace 'PACKAGES', '#ocaml-voaacenc', 'ocaml-voaacenc' if ARGV.include? "--with-aac"
     mkdir_p "#{lib}"
     system './configure', "--prefix=#{prefix}"
     system 'make'
