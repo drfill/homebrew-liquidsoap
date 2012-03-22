@@ -6,6 +6,13 @@ class Liquidsoap < Formula
   md5 'e379caaf68b1141b0b34bdb3db14ab69'
   head 'http://savonet.hg.sourceforge.net:8000/hgroot/savonet/savonet', :using => :hg
 
+  unless MacOS.leopard? or MacOS.lion?
+    onoe 'Sorry!'
+    onoe 'We currently does not support MacOSX older than 10.6, '
+    onoe 'try old Macports way described here -> http://savonet.sourceforge.net/macports.html'
+    exit
+  end
+
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'pcre-ocaml' => :build
@@ -35,7 +42,8 @@ class Liquidsoap < Formula
   end
 
   def install
-    ENV.llvm if ARGV.include? '--with-aacplus'
+    ENV.llvm if MacOS.xcode_version >= "4.2" and ARGV.include? '--with-aacplus' # This fields contains dirty hack
+    ENV.gcc if MacOS.xcode_version < "4.2" and ARGV.include? '--with-aacplus'   # to provide ability install liquidsoap with aacplus library
     ENV['MAKEFLAGS'] = "-j2"
     cp 'PACKAGES.minimal', 'PACKAGES'
     system "./bootstrap" if ARGV.build_head?
