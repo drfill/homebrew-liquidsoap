@@ -5,6 +5,7 @@ class Liquidsoap < Formula
   homepage 'http://liquidsoap.fm/'
   md5 'e379caaf68b1141b0b34bdb3db14ab69'
   version '1.0.0'
+  head 'http://savonet.hg.sourceforge.net:8000/hgroot/savonet/savonet', :using => :hg
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
