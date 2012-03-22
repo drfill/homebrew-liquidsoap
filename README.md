@@ -1,6 +1,6 @@
 # Homebrew-Liquidsoap
 
-Cloned repository to support latest [Homebrew][homebrewhome] TAP function out of the box
+[Homebrew][homebrewhome] Liquidsoap formula repository (**MacOSX only**)
 
 ## Requirements
 
