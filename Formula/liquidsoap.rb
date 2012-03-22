@@ -52,6 +52,7 @@ class Liquidsoap < Formula
     inreplace 'PACKAGES', '#ocaml-lastfm', 'ocaml-lastfm' if ARGV.include? "--with-lastfm"
     inreplace 'PACKAGES', '#ocaml-soundtouch', 'ocaml-soundtouch' if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
     inreplace 'PACKAGES', '#ocaml-aacplus', 'ocaml-aacplus' if ARGV.include? "--with-aacplus"
+    mkdir_p "#{lib}"
     system './configure', "--prefix=#{prefix}"
     system 'make'
     system 'make', 'doc'
