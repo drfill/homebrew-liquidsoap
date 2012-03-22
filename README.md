@@ -12,11 +12,11 @@
 
 ### Quick Start
 
-brew tap drfill/liquidsoap
+`brew tap drfill/liquidsoap`
 
 ### Installing homebrew-liquidsoap Formulae
 
-brew install liquidsoap
+`brew install liquidsoap`
 
 ### Options available in homebrew-liquidsoap formula
 
@@ -40,7 +40,7 @@ brew install liquidsoap
 
 ## Usage
 
-liquidsoap --help or [documentation page][docs] at [liquidsoap.fm](http://liquidsoap.fm)
+`liquidsoap --help` or [documentation page][docs] at [liquidsoap.fm](http://liquidsoap.fm)
 
 ## Todo
 
