@@ -22,13 +22,14 @@ class Liquidsoap < Formula
   depends_on 'theora' => :optional
   depends_on 'schroedinger' => :optional
   depends_on "libsamplerate" if ARGV.include? "--with-samplerate"
-  depends_on "xmlm" if ARGV.include? "--with-lastfm"
-  depends_on "sound-touch" if ARGV.include? "--with-soundtouch" if Hardware.is_32_bit?
+  depends_on "xmlm" if ARGV.include? "--with-lastfm" or ARGV.include? "--with-xmlplaylist"
+  depends_on "sound-touch" if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
   
   def options
-    [['--with-samplerate', "Enable Samplerate library support"],
-    ['--with-lastfm', "Enables LAST.fm and XmlPlaylist support"],
+    [['--with-samplerate', "Enables Samplerate library support"],
+    ['--with-xmlplaylist', "Enables XmlPlaylist support"],
+    ['--with-lastfm', "Enables LAST.fm support"],
     ['--with-soundtouch', "Enables Soundtouch library support"], 
     ['--with-aacplus', "Enables AAC+ library support"],]
   end
@@ -48,7 +49,7 @@ class Liquidsoap < Formula
     inreplace 'PACKAGES', '#ocaml-theora', 'ocaml-theora'  if Formula.factory('theora').installed?
     inreplace 'PACKAGES', '#ocaml-schroedinger', 'ocaml-schroedinger' if Formula.factory('schroedinger').installed?
     inreplace 'PACKAGES', '#ocaml-samplerate', 'ocaml-samplerate' if ARGV.include? "--with-samplerate"
-    inreplace 'PACKAGES', '#ocaml-xmlplaylist', 'ocaml-xmlplaylist' if ARGV.include? "--with-lastfm"
+    inreplace 'PACKAGES', '#ocaml-xmlplaylist', 'ocaml-xmlplaylist' if ARGV.include? "--with-xmlplaylist" or ARGV.include? "--with-lastfm"
     inreplace 'PACKAGES', '#ocaml-lastfm', 'ocaml-lastfm' if ARGV.include? "--with-lastfm"
     inreplace 'PACKAGES', '#ocaml-soundtouch', 'ocaml-soundtouch' if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
     inreplace 'PACKAGES', '#ocaml-aacplus', 'ocaml-aacplus' if ARGV.include? "--with-aacplus"
