@@ -18,7 +18,7 @@ brew tap drfill/liquidsoap
 
 brew install liquidsoap
 
-### Options available in liquidsoap
+### Options available in homebrew-liquidsoap formula
 
 	--with-samplerate
 		Enables Samplerate library support
@@ -40,7 +40,7 @@ brew install liquidsoap
 
 ## Usage
 
-liquidsoap --help
+liquidsoap --help or [documentation page][docs] at [liquidsoap.fm](http://liquidsoap.fm)
 
 ## Todo
 
@@ -70,3 +70,4 @@ full on http://savonet.hg.sourceforge.net/hgweb/savonet/savonet/raw-file/6e8a95e
 [intel]:http://intel.com
 [ppc]:https://www-01.ibm.com/chips/techlib/techlib.nsf/products/PowerPC
 [oldmacs]:http://myoldmac.net/cgi-data/gal/index.php
+[docs]:http://liquidsoap.fm/doc-1.0.0/documentation.html
