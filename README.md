@@ -1,6 +1,6 @@
 # Homebrew-Liquidsoap
 
-Cloned repository to support latest [Homebrew][homebrew] TAP function out of the box
+Cloned repository to support latest [Homebrew][homebrewhome] TAP function out of the box
 
 ## Requirements
 
@@ -64,6 +64,7 @@ liquidsoap --help
 full on http://savonet.hg.sourceforge.net/hgweb/savonet/savonet/raw-file/6e8a95e78fba/LICENSE
 
 
+[homebrewhome]:http://mxcl.github.com/homebrew/
 [homebrew]:https://github.com/mxcl/homebrew/wiki/installation
 [apple]:http://apple.com
 [intel]:http://intel.com
