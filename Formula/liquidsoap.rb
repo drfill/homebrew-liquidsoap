@@ -6,7 +6,7 @@ class Liquidsoap < Formula
   md5 'e379caaf68b1141b0b34bdb3db14ab69'
   head 'http://savonet.hg.sourceforge.net:8000/hgroot/savonet/savonet', :using => :hg
 
-  unless MacOS.leopard? or MacOS.lion?
+  unless MacOS.snow_leopard? or MacOS.lion?
     onoe 'Sorry!'
     onoe 'We currently does not support MacOSX older than 10.6, '
     onoe 'try old Macports way described here -> http://savonet.sourceforge.net/macports.html'
