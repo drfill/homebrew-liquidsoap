@@ -8,12 +8,11 @@ class Libaacplus < Formula
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build
   depends_on 'libtool' => :build
-  depends_on 'fftw'
 
   def install
     ENV.llvm if MacOS.xcode_version >= "4.2" # This fields contains dirty hack
     ENV.gcc if MacOS.xcode_version < "4.2"   # to provide ability install aacplus library
-    ENV.j1
+    ENV.deparallelize
     inreplace 'autogen.sh', 'libtool', 'glibtool'
     system "./autogen.sh", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--disable-libtool-lock"
