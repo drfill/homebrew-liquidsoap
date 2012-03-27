@@ -9,9 +9,11 @@ class Camomile < Formula
   depends_on 'ocaml-findlib'
 
   def install
+    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.j1
     system './configure', "--prefix=#{prefix}"
-    system 'make -j 1'
+    system 'make'
     mkdir_p "#{prefix}/lib/ocaml/site-lib"
-    system "make OCAMLFIND_DESTDIR=#{prefix}/lib/ocaml/site-lib install"
+    system "make install"
   end
 end
