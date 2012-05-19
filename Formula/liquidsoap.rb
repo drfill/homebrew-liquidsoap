@@ -17,6 +17,8 @@ class Liquidsoap < Formula
   depends_on 'ocaml-findlib' => :build
   depends_on 'pcre-ocaml' => :build
   depends_on 'camomile'
+  depends_on 'ocaml-magic' => :optional
+  depends_on 'yojson' => :optional
   depends_on 'libao' => :optional
   depends_on 'libogg' => :optional
   depends_on 'libvorbis' => :optional
