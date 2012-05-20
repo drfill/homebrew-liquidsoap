@@ -36,6 +36,7 @@ class Liquidsoap < Formula
   depends_on "soundtouch" if ARGV.include? "--with-soundtouch" and Hardware.is_64_bit?
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
   depends_on "vo-aacenc" if ARGV.include? "--with-aac"
+  depends_on 'liblo' if ARGV.include? "--with-lo"
   depends_on "camlimages" if ARGV.include? "--with-video-processing"
 
   def options
@@ -45,6 +46,7 @@ class Liquidsoap < Formula
     ['--with-soundtouch', "Enables Soundtouch library support"],
     ['--with-aac', "Enables AAC library support"],
     ['--with-aacplus', "Enables AAC+ library support"],
+    ['--with-lo', "Enables lo library support"],
     ['--with-video-processing', "Enables video processing modules (currently in development)"],]
   end
 
@@ -71,6 +73,7 @@ class Liquidsoap < Formula
     inreplace 'PACKAGES', '#ocaml-soundtouch', 'ocaml-soundtouch' if ARGV.include? "--with-soundtouch"
     inreplace 'PACKAGES', '#ocaml-aacplus', 'ocaml-aacplus' if ARGV.include? "--with-aacplus"
     inreplace 'PACKAGES', '#ocaml-voaacenc', 'ocaml-voaacenc' if ARGV.include? "--with-aac"
+    inreplace 'PACKAGES', '#ocaml-lo', 'ocaml-lo' if ARGV.include? "--with-lo"
     mkdir_p "#{lib}"
     system './configure', "--prefix=#{prefix}"
     system 'make'

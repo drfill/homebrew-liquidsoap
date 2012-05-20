@@ -38,6 +38,9 @@
 	--with-aacplus
 		Enables AAC+ library support
 
+	--with-lo
+		Enables lo library support
+
 	--with-video-processing
 		Enables video processing modules (currently in development)
 
