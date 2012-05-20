@@ -53,7 +53,6 @@ class Liquidsoap < Formula
     ENV.gcc if MacOS.xcode_version < "4.2" and ARGV.include? '--with-aacplus'   # to provide ability install liquidsoap with aacplus library
     ENV['MAKEFLAGS'] = "-j2"
     cp 'PACKAGES.minimal', 'PACKAGES'
-    system "echo ./PACKAGES"
     system "./bootstrap" if ARGV.build_head?
     inreplace 'PACKAGES', 'ocaml-ao', '#ocaml-ao'  unless Formula.factory('libao').installed?
     inreplace 'PACKAGES', 'ocaml-ogg', '#ocaml-ogg'  unless Formula.factory('libogg').installed?
