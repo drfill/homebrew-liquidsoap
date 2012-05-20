@@ -24,7 +24,7 @@ class Liquidsoap < Formula
   depends_on 'libvorbis' => :optional
   depends_on 'mad' => :optional
   depends_on 'taglib' => :optional
-  depends_on 'lame' => :build if Hardware.is_64_bit?
+  depends_on 'lame' => :optional if Hardware.is_64_bit?
   depends_on 'flac' => :optional
   depends_on 'faad2' => :optional
   depends_on 'speex' => :optional
@@ -32,7 +32,8 @@ class Liquidsoap < Formula
   depends_on 'schroedinger' => :optional
   depends_on "libsamplerate" if ARGV.include? "--with-samplerate"
   depends_on "xmlm" if ARGV.include? "--with-lastfm" or ARGV.include? "--with-xmlplaylist"
-  depends_on "soundtouch" if ARGV.include? "--with-soundtouch"
+  depends_on "sound-touch" if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
+  depends_on "soundtouch" if ARGV.include? "--with-soundtouch" and Hardware.is_64_bit?
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
   depends_on "vo-aacenc" if ARGV.include? "--with-aac"
 
