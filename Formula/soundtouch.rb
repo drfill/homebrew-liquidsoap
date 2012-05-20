@@ -1,6 +1,6 @@
 require 'formula'
 
-class SoundTouch < Formula
+class Soundtouch < Formula
   url 'http://www.surina.net/soundtouch/soundtouch-1.6.0.tar.gz'
   homepage 'http://www.surina.net/soundtouch/'
   md5 'aa1c63d4d67b033f044a6a48d2be5bdd'

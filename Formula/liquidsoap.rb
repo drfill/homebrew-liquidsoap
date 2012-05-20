@@ -32,7 +32,7 @@ class Liquidsoap < Formula
   depends_on 'schroedinger' => :optional
   depends_on "libsamplerate" if ARGV.include? "--with-samplerate"
   depends_on "xmlm" if ARGV.include? "--with-lastfm" or ARGV.include? "--with-xmlplaylist"
-  depends_on "sound-touch" if ARGV.include? "--with-soundtouch"
+  depends_on "soundtouch" if ARGV.include? "--with-soundtouch"
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
   depends_on "vo-aacenc" if ARGV.include? "--with-aac"
 
