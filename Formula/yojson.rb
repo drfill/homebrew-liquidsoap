@@ -6,9 +6,11 @@ class Yojson < Formula
   md5 '9f19c943c9527e18ca624b5cefd79750'
 
   depends_on 'objective-caml'
+  depends_on 'ocaml-findlib'
   depends_on 'easy-format'
   depends_on 'biniou'
-  depends_on 'ocaml-findlib'
+  depends_on 'cppo'
+
 
   def install
     ENV.j1
