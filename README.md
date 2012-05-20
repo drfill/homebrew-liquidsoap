@@ -38,13 +38,18 @@
 	--with-aacplus
 		Enables AAC+ library support
 
+	--with-video-processing
+		Enables video processing modules (currently in development)
+
 ## Usage
 
 `liquidsoap --help` or [documentation page][docs] at [liquidsoap.fm](http://liquidsoap.fm)
 
 ## Todo
 
-* TODO
+* libgif and libpng in camlimages
+* Gavl
+* DSSI
 
 ## Bugs and other caveats
 

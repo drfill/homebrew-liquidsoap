@@ -36,6 +36,7 @@ class Liquidsoap < Formula
   depends_on "soundtouch" if ARGV.include? "--with-soundtouch" and Hardware.is_64_bit?
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
   depends_on "vo-aacenc" if ARGV.include? "--with-aac"
+  depends_on "camlimages" if ARGV.include? "--with-video"
 
   def options
     [['--with-samplerate', "Enables Samplerate library support"],
@@ -43,7 +44,8 @@ class Liquidsoap < Formula
     ['--with-lastfm', "Enables LAST.fm support"],
     ['--with-soundtouch', "Enables Soundtouch library support"],
     ['--with-aac', "Enables AAC library support"],
-    ['--with-aacplus', "Enables AAC+ library support"],]
+    ['--with-aacplus', "Enables AAC+ library support"],
+    ['--with-video-processing', "Enables video processing modules (currently in development)"],]
   end
 
   def install
@@ -51,6 +53,7 @@ class Liquidsoap < Formula
     ENV.gcc if MacOS.xcode_version < "4.2" and ARGV.include? '--with-aacplus'   # to provide ability install liquidsoap with aacplus library
     ENV['MAKEFLAGS'] = "-j2"
     cp 'PACKAGES.minimal', 'PACKAGES'
+    system "echo ./PACKAGES"
     system "./bootstrap" if ARGV.build_head?
     inreplace 'PACKAGES', 'ocaml-ao', '#ocaml-ao'  unless Formula.factory('libao').installed?
     inreplace 'PACKAGES', 'ocaml-ogg', '#ocaml-ogg'  unless Formula.factory('libogg').installed?
