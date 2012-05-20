@@ -6,7 +6,7 @@ class Liquidsoap < Formula
   md5 'e379caaf68b1141b0b34bdb3db14ab69'
   head 'http://savonet.hg.sourceforge.net:8000/hgroot/savonet/savonet', :using => :hg
 
-  unless MacOS.snow_leopard? or MacOS.lion?
+  unless MacOS.snow_leopard? or MacOS.lion? or MacOS.mountain_lion
     onoe 'Sorry!'
     onoe 'We currently does not support MacOSX older than 10.6, '
     onoe 'try old Macports way described here -> http://savonet.sourceforge.net/macports.html'
@@ -24,7 +24,7 @@ class Liquidsoap < Formula
   depends_on 'libvorbis' => :optional
   depends_on 'mad' => :optional
   depends_on 'taglib' => :optional
-  depends_on 'lame' => :optional if Hardware.is_64_bit?
+  depends_on 'lame' => :build if Hardware.is_64_bit?
   depends_on 'flac' => :optional
   depends_on 'faad2' => :optional
   depends_on 'speex' => :optional
@@ -32,7 +32,7 @@ class Liquidsoap < Formula
   depends_on 'schroedinger' => :optional
   depends_on "libsamplerate" if ARGV.include? "--with-samplerate"
   depends_on "xmlm" if ARGV.include? "--with-lastfm" or ARGV.include? "--with-xmlplaylist"
-  depends_on "sound-touch" if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
+  depends_on "sound-touch" if ARGV.include? "--with-soundtouch"
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
   depends_on "vo-aacenc" if ARGV.include? "--with-aac"
 
@@ -65,7 +65,7 @@ class Liquidsoap < Formula
     inreplace 'PACKAGES', '#ocaml-samplerate', 'ocaml-samplerate' if ARGV.include? "--with-samplerate"
     inreplace 'PACKAGES', '#ocaml-xmlplaylist', 'ocaml-xmlplaylist' if ARGV.include? "--with-xmlplaylist" or ARGV.include? "--with-lastfm"
     inreplace 'PACKAGES', '#ocaml-lastfm', 'ocaml-lastfm' if ARGV.include? "--with-lastfm"
-    inreplace 'PACKAGES', '#ocaml-soundtouch', 'ocaml-soundtouch' if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
+    inreplace 'PACKAGES', '#ocaml-soundtouch', 'ocaml-soundtouch' if ARGV.include? "--with-soundtouch"
     inreplace 'PACKAGES', '#ocaml-aacplus', 'ocaml-aacplus' if ARGV.include? "--with-aacplus"
     inreplace 'PACKAGES', '#ocaml-voaacenc', 'ocaml-voaacenc' if ARGV.include? "--with-aac"
     mkdir_p "#{lib}"
