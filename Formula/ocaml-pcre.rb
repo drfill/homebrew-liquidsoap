@@ -1,13 +1,13 @@
 require 'formula'
 
-class PcreOcaml < Formula
+class OcamlPcre < Formula
   homepage 'http://www.ocaml.info/home/ocaml_sources.html'
   url 'https://bitbucket.org/mmottl/pcre-ocaml/downloads/pcre-ocaml-6.2.5.tar.gz'
   md5 'a6f8873bbf5d2d0897654cc35fa59a42'
 
-  depends_on 'objective-caml'
-  depends_on 'ocaml-findlib'
-  depends_on 'pcre'
+  depends_on 'objective-caml' => :build
+  depends_on 'ocaml-findlib' => :build
+  depends_on 'pcre' => :build
 
   def install
     ENV.j1

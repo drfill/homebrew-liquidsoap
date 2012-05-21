@@ -1,6 +1,6 @@
 require 'formula'
 
-class Camlimages < Formula
+class OcamlCamlimages < Formula
   homepage 'http://gallium.inria.fr/camlimages/'
   url 'https://bitbucket.org/camlspotter/camlimages/get/v4.0.1.tar.gz'
   # head 'https://bitbucket.org/camlspotter/camlimages', :using => :hg #### Does not work with omake... checked: 20.05.2012
@@ -17,9 +17,9 @@ class Camlimages < Formula
   depends_on 'ghostscript' => :build
   
   def install
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     ENV.j1
     ENV.libpng
+    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     inreplace "OMakefile", "/usr/include/X11", "/usr/include\n  /usr/X11/include\n  #{HOMEBREW_PREFIX}/include/X11"
     inreplace "OMakefile", "#{HOMEBREW_PREFIX}/include/X11", "#{HOMEBREW_PREFIX}/include/X11\n  "+Formula.factory('giflib416').include if Formula.factory('giflib').installed?
     inreplace "OMakefile", "LDFLAGS[]+=", "LDFLAGS[]+= -L"+Formula.factory('giflib416').lib if Formula.factory('giflib').installed?

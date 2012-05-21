@@ -13,7 +13,8 @@ class OcamlSdl < Formula
   depends_on 'sdl_ttf' => :build
 
   def install
-    ENV.llvm
+    ENV.llvm if MacOS.xcode_version >= "4.2"
+    ENV.gcc if MacOS.xcode_version < "4.2"
     ENV.j1
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     system './configure', "--prefix=#{prefix}"
