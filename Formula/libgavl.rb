@@ -11,6 +11,6 @@ class Libgavl < Formula
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--without-doxygen"
-    system "make install" # if this fails, try separate make/make install steps
+    system "make install"
   end
 end

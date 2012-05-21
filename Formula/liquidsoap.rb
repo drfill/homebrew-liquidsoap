@@ -30,6 +30,7 @@ class Liquidsoap < Formula
   depends_on 'speex' => :optional
   depends_on 'theora' => :optional
   depends_on 'schroedinger' => :optional
+  depends_on 'ocaml-sdl' => :optional
   depends_on "libsamplerate" if ARGV.include? "--with-samplerate"
   depends_on "xmlm" if ARGV.include? "--with-lastfm" or ARGV.include? "--with-xmlplaylist"
   depends_on "sound-touch" if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
@@ -50,7 +51,8 @@ class Liquidsoap < Formula
     ['--with-lo', "Enables lo library support"],
     ['--with-video-processing', "Enables video processing modules (currently in development)"],]
   end
-
+  
+  # TODO: SDL, GD, DSSI, LADSPA, ALSA/Portaudio/Pulseaudio/JACK/GStreamer
   def install
     ENV.llvm if MacOS.xcode_version >= "4.2" and ARGV.include? '--with-aacplus' # This fields contains dirty hack
     ENV.gcc if MacOS.xcode_version < "4.2" and ARGV.include? '--with-aacplus'   # to provide ability install liquidsoap with aacplus library
