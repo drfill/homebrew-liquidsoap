@@ -50,7 +50,7 @@
 
 ## Todo
 
-* libgif and libpng in camlimages
+* libpng support in camlimages (MacOSX native pnglib has no support)
 * Gavl
 * DSSI
 
