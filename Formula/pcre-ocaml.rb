@@ -2,8 +2,8 @@ require 'formula'
 
 class PcreOcaml < Formula
   homepage 'http://www.ocaml.info/home/ocaml_sources.html'
-  url 'http://hg.ocaml.info/release/pcre-ocaml/archive/release-6.2.5.tar.bz2'
-  md5 '2c854b3cb456a7622668ef16789eff52'
+  url 'https://bitbucket.org/mmottl/pcre-ocaml/downloads/pcre-ocaml-6.2.5.tar.gz'
+  md5 'a6f8873bbf5d2d0897654cc35fa59a42'
 
   depends_on 'objective-caml'
   depends_on 'ocaml-findlib'
