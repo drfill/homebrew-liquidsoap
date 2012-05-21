@@ -38,6 +38,7 @@ class Liquidsoap < Formula
   depends_on "vo-aacenc" if ARGV.include? "--with-aac"
   depends_on 'liblo' if ARGV.include? "--with-lo"
   depends_on "camlimages" if ARGV.include? "--with-video-processing"
+  depends_on "libgavl" if ARGV.include? "--with-video-processing"
 
   def options
     [['--with-samplerate', "Enables Samplerate library support"],
@@ -74,6 +75,7 @@ class Liquidsoap < Formula
     inreplace 'PACKAGES', '#ocaml-aacplus', 'ocaml-aacplus' if ARGV.include? "--with-aacplus"
     inreplace 'PACKAGES', '#ocaml-voaacenc', 'ocaml-voaacenc' if ARGV.include? "--with-aac"
     inreplace 'PACKAGES', '#ocaml-lo', 'ocaml-lo' if ARGV.include? "--with-lo"
+    inreplace 'PACKAGES', '#ocaml-gavl', 'ocaml-gavl' if ARGV.include? "--with-video-processing"
     mkdir_p "#{lib}"
     system './configure', "--prefix=#{prefix}"
     system 'make'

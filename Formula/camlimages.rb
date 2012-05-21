@@ -21,7 +21,9 @@ class Camlimages < Formula
     ENV.j1
     inreplace "OMakefile", "/usr/include/X11", "/usr/include\n  /usr/X11/include\n  #{HOMEBREW_PREFIX}/include/X11"
     inreplace "OMakefile", "#{HOMEBREW_PREFIX}/include/X11", "#{HOMEBREW_PREFIX}/include/X11\n  "+Formula.factory('giflib416').include if Formula.factory('giflib').installed?
-    inreplace "OMakefile", "LDFLAGS[]+=", "LDFLAGS[]+= -L"+Formula.factory('giflib416').lib if Formula.factory('giflib').installed? 
+    inreplace "OMakefile", "LDFLAGS[]+=", "LDFLAGS[]+= -L"+Formula.factory('giflib416').lib if Formula.factory('giflib').installed?
+    # Waiting for LibPng 1.5 bundled in MacOSX Lion to be supported in CamlImages
+    # inreplace "OMakefile", "LDFLAGS[]+=", "LDFLAGS[]+= -L/usr/X11/lib"
     inreplace "OMakefile", "/usr/share/X11", "/usr/X11/share/X11"
     system 'omake'
     mkdir_p "#{prefix}/lib/ocaml/site-lib"
