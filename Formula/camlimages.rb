@@ -19,6 +19,7 @@ class Camlimages < Formula
   def install
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     ENV.j1
+    ENV.libpng
     inreplace "OMakefile", "/usr/include/X11", "/usr/include\n  /usr/X11/include\n  #{HOMEBREW_PREFIX}/include/X11"
     inreplace "OMakefile", "#{HOMEBREW_PREFIX}/include/X11", "#{HOMEBREW_PREFIX}/include/X11\n  "+Formula.factory('giflib416').include if Formula.factory('giflib').installed?
     inreplace "OMakefile", "LDFLAGS[]+=", "LDFLAGS[]+= -L"+Formula.factory('giflib416').lib if Formula.factory('giflib').installed?

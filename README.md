@@ -51,8 +51,10 @@
 ## Todo
 
 * libpng support in camlimages (MacOSX native pnglib has no support)
-* Gavl
+* GD
 * DSSI
+* LADSPA
+* Various Sound Daemons like ALSA/Portaudio/Pulseaudio/JACK/GStreamer
 
 ## Bugs and other caveats
 
