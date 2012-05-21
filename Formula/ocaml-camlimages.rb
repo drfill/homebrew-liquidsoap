@@ -13,7 +13,7 @@ class OcamlCamlimages < Formula
   depends_on 'libjpeg' => :build
   depends_on 'libtiff' => :build
   depends_on 'libxpm' => :build
-  depends_on 'giflib416' => :build # Old version of giflib is currently supported
+  depends_on 'giflib' => :build # Old version of giflib is currently supported
   depends_on 'ghostscript' => :build
   
   def install
@@ -21,8 +21,6 @@ class OcamlCamlimages < Formula
     ENV.libpng
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     inreplace "OMakefile", "/usr/include/X11", "/usr/include\n  /usr/X11/include\n  #{HOMEBREW_PREFIX}/include/X11"
-    inreplace "OMakefile", "#{HOMEBREW_PREFIX}/include/X11", "#{HOMEBREW_PREFIX}/include/X11\n  "+Formula.factory('giflib416').include if Formula.factory('giflib').installed?
-    inreplace "OMakefile", "LDFLAGS[]+=", "LDFLAGS[]+= -L"+Formula.factory('giflib416').lib if Formula.factory('giflib').installed?
     # Waiting for LibPng 1.5 bundled in MacOSX Lion to be supported in CamlImages
     # inreplace "OMakefile", "LDFLAGS[]+=", "LDFLAGS[]+= -L/usr/X11/lib"
     inreplace "OMakefile", "/usr/share/X11", "/usr/X11/share/X11"
