@@ -37,7 +37,7 @@ class Liquidsoap < Formula
   depends_on "sound-touch" if ARGV.include? "--with-soundtouch" and Hardware.is_32_bit?
   depends_on "soundtouch" if ARGV.include? "--with-soundtouch" and Hardware.is_64_bit?
   depends_on "libaacplus" if ARGV.include? "--with-aacplus"
-  depends_on "vo-aacenc" if ARGV.include? "--with-aac"
+  depends_on "libvo-aacenc" if ARGV.include? "--with-aac"
   depends_on 'liblo' if ARGV.include? "--with-lo"
   depends_on "camlimages" if ARGV.include? "--with-video-processing"
   depends_on "libgavl" if ARGV.include? "--with-video-processing"
