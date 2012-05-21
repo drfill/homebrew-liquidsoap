@@ -6,6 +6,7 @@ class Soundtouch < Formula
   md5 'aa1c63d4d67b033f044a6a48d2be5bdd'
 
   depends_on 'autoconf' => :build
+  depends_on 'automake' => :build
 
   def install
     # The build fails complaining about out of date libtools. Rerunning the autoconf from bootstrap prevents the error.
