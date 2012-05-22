@@ -10,7 +10,6 @@ class OcamlMagic < Formula
   depends_on 'libmagic' => :build
 
   def install
-    ENV.j1
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     system './configure'
     system 'make'

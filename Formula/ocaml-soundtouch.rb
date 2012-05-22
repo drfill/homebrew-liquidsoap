@@ -7,7 +7,8 @@ class OcamlSoundtouch < Formula
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'soundtouch' => :build
+  depends_on "sound-touch" => :build if Hardware.is_32_bit?
+  depends_on "soundtouch" => :build if Hardware.is_64_bit?
 
   def install
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"

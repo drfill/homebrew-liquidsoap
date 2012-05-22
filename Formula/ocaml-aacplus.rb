@@ -10,6 +10,7 @@ class OcamlAacplus < Formula
   depends_on 'libaacplus' => :build
 
   def install
+    ENV.j1
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"

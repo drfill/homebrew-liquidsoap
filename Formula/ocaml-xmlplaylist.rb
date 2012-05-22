@@ -10,6 +10,7 @@ class OcamlXmlplaylist < Formula
   depends_on 'ocaml-xmlm' => :build
 
   def install
+    ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"

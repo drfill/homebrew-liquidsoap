@@ -9,11 +9,8 @@ class OcamlMm < Formula
   depends_on 'ocaml-findlib' => :build
   depends_on 'ocaml-ogg' => :optional
   depends_on 'ocaml-theora' => :optional
-  depends_on 'ocaml-sdl' => :optional
   depends_on 'ocaml-ao' => :optional
   depends_on 'ocaml-mad' => :optional
-  depends_on 'ocaml-gstreamer' => :optional
-  depends_on 'ffmpeg' => :optional
 
   def install
     ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"

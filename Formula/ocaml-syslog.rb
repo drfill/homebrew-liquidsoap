@@ -11,6 +11,7 @@ class OcamlSyslog < Formula
   def install
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     system "make"
+    system "make opt"
     mkdir_p "#{lib}/ocaml/site-lib"
     system "make install"
   end

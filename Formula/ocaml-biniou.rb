@@ -11,9 +11,10 @@ class OcamlBiniou < Formula
 
   def install
     ENV.j1
+    ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
-    system 'make'
+    system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
-    system "make", "install"
+    system "make install"
   end
 end
