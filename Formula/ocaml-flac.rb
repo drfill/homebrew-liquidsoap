@@ -1,14 +1,14 @@
 require 'formula'
 
-class OcamlDssi < Formula
+class OcamlFlac < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-dssi/0.1.0/ocaml-dssi-0.1.0.tar.gz'
-  md5 '816bdbdf8a4fa842019367d07c3f6ac9'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-flac/0.1.0/ocaml-flac-0.1.0.tar.gz'
+  md5 'cbe73d8494f4db74520f9334c0130c0e'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'ocaml-ladspa' => :build
-  depends_on 'dssi' => :build
+  depends_on 'flac' => :build
+  depends_on 'ocaml-ogg' => :build
 
   def install
     ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"

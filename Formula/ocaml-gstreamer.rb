@@ -1,14 +1,15 @@
 require 'formula'
 
-class OcamlDssi < Formula
+class OcamlGstreamer < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-dssi/0.1.0/ocaml-dssi-0.1.0.tar.gz'
-  md5 '816bdbdf8a4fa842019367d07c3f6ac9'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-gstreamer/0.1.0/ocaml-gstreamer-0.1.0.tar.gz'
+  md5 'ca632b69425efffe60274568d02d672a'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'ocaml-ladspa' => :build
-  depends_on 'dssi' => :build
+  depends_on 'gstreamer' => :build
+  depends_on 'gst-plugins-base' => :build
+  depends_on 'ocaml-idl' => :build
 
   def install
     ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"

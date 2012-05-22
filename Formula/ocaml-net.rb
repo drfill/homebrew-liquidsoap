@@ -8,11 +8,13 @@ class OcamlNet < Formula
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'ocaml-pcre' => :build
-  depends_on 'openssl' => :build
+  depends_on 'ocaml-ssl' => :build
+  depends_on 'ocaml-cryptokit' => :build
 
   def install
+    ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
-    system "./configure", "-enable-pcre", "-enable-ssl", "-enable-zip", "-enable-crypto", "-bindir", "#{prefix}/bin", "-datadir", "#{lib}"
+    system "./configure", "-enable-pcre", "-enable-ssl", "-disable-zip", "-enable-crypto", "-bindir", "#{prefix}/bin", "-datadir", "#{lib}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
     system "make install"

@@ -1,14 +1,12 @@
 require 'formula'
 
-class OcamlDssi < Formula
-  homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-dssi/0.1.0/ocaml-dssi-0.1.0.tar.gz'
-  md5 '816bdbdf8a4fa842019367d07c3f6ac9'
+class OcamlCryptokit < Formula
+  homepage 'http://gallium.inria.fr/~xleroy/software.html#cryptokit'
+  url 'http://forge.ocamlcore.org/frs/download.php/639/cryptokit-1.5.tar.gz'
+  md5 '4393bf2b20f8e18eb732c078d582d5ec'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'ocaml-ladspa' => :build
-  depends_on 'dssi' => :build
 
   def install
     ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"

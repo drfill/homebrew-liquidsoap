@@ -8,7 +8,7 @@ class OcamlFindlib < Formula
   depends_on 'objective-caml' => :build
 
   def install
-    system './configure', '-config',  "#{prefix}/etc", "-sitelib", "#{lib}/ocaml/site-lib", "-system", "osx", "-bindir", "#{bin}", "-mandir", "#{man}"
+    system './configure', '-config',  "#{prefix}/etc/findlib.conf", "-sitelib", "#{lib}/ocaml/site-lib", "-system", "osx", "-bindir", "#{bin}", "-mandir", "#{man}", "-with-toolbox"
     system 'make'
     system 'make opt'
     mkdir_p "#{lib}/ocaml/site-lib"
