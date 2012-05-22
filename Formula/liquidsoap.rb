@@ -7,7 +7,7 @@ class Liquidsoap < Formula
   # Too much errors in bootstrap, ocaml-ogg could not find
   # head 'http://savonet.hg.sourceforge.net:8000/hgroot/savonet/savonet', :using => :hg
 
-  unless MacOS.snow_leopard? or MacOS.lion? or MacOS.mountain_lion
+  unless MacOS.snow_leopard? or MacOS.lion? or MacOS.mountain_lion?
     onoe 'Sorry!'
     onoe 'We currently does not support MacOSX older than 10.6, '
     onoe 'try old Macports way described here -> http://savonet.sourceforge.net/macports.html'
