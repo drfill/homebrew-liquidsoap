@@ -42,7 +42,13 @@
 		Enables lo library support
 
 	--with-video-processing
-		Enables video processing modules (currently in development)
+		Enables video processing modules
+
+	--with-ffmpeg
+		Enables FFmpeg support
+
+	--with-all
+		Includes all available modules in Liquidsoap
 
 ## Usage
 
