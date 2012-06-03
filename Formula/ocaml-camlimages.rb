@@ -17,6 +17,7 @@ class OcamlCamlimages < Formula
   
   def install
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV['OCAMLFIND_LDCONF'] = 'ignore'
     inreplace "OMakefile", "/usr/include/X11", "/usr/include\n  /usr/X11/include\n  #{HOMEBREW_PREFIX}/include/X11"
     # Waiting for LibPng 1.5 bundled in MacOSX Lion to be supported in CamlImages
     # inreplace "OMakefile", "LDFLAGS[]+=", "LDFLAGS[]+= -L/usr/X11/lib"
@@ -24,5 +25,7 @@ class OcamlCamlimages < Formula
     system 'omake'
     mkdir_p "#{prefix}/lib/ocaml/site-lib"
     system "omake install"
+    mkdir_p "#{lib}/ocaml/stublibs"
+    system "mv #{lib}/ocaml/site-lib/*/*.so #{lib}/ocaml/stublibs"
   end
 end
