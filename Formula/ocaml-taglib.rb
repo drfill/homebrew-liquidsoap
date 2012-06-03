@@ -10,10 +10,12 @@ class OcamlTaglib < Formula
   depends_on 'taglib' => :build
 
   def install
-      ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
-      system "./configure", "--prefix=#{prefix}"
-      system "make"
-      mkdir_p "#{lib}/ocaml/site-lib"
-      system "make install"
-    end
+    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    system "./configure", "--prefix=#{prefix}"
+    system "make"
+    mkdir_p "#{lib}/ocaml/site-lib"
+    system "make install OCAMLFIND_LDCONF=ignore"
+    mkdir_p "#{lib}/ocaml/stublibs"
+    system "mv #{lib}/ocaml/site-lib/*/*stubs.so #{lib}/ocaml/stublibs"
+  end
 end

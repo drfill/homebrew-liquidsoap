@@ -14,6 +14,8 @@ class OcamlPcre < Formula
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     system 'make'
     mkdir_p "#{lib}/ocaml/site-lib"
-    system "make", "install"
+    system "make install OCAMLFIND_LDCONF=ignore"
+    mkdir_p "#{lib}/ocaml/stublibs"
+    system "mv #{lib}/ocaml/site-lib/*/*stubs.so #{lib}/ocaml/stublibs"
   end
 end
