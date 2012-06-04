@@ -19,6 +19,8 @@ class OcamlSdl < Formula
     system './configure', "--prefix=#{prefix}"
     system 'make'
     mkdir_p "#{lib}/ocaml/site-lib"
-    system "make", "install"
+    system "make install OCAMLFIND_LDCONF=ignore"
+    mkdir_p "#{lib}/ocaml/stublibs"
+    system "mv #{lib}/ocaml/site-lib/*/*stub.so #{lib}/ocaml/stublibs"
   end
 end

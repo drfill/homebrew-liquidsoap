@@ -14,8 +14,10 @@ class OcamlLame < Formula
     ENV.gcc if MacOS.xcode_version < "4.2"
     ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
-    system "make"
+    system "make -j1"
     mkdir_p "#{lib}/ocaml/site-lib"
-    system "make install"
+    system "make install OCAMLFIND_LDCONF=ignore"
+    mkdir_p "#{lib}/ocaml/stublibs"
+    system "mv #{lib}/ocaml/site-lib/*/*stubs.so #{lib}/ocaml/stublibs"
   end
 end

@@ -17,6 +17,8 @@ class OcamlNet < Formula
     system "./configure", "-enable-pcre", "-enable-ssl", "-disable-zip", "-enable-crypto", "-bindir", "#{prefix}/bin", "-datadir", "#{lib}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
-    system "make install"
+    system "make install OCAMLFIND_LDCONF=ignore"
+    mkdir_p "#{lib}/ocaml/stublibs"
+    system "mv #{lib}/ocaml/site-lib/*/*stubs.so #{lib}/ocaml/stublibs"
   end
 end
