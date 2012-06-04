@@ -10,12 +10,12 @@ class OcamlLadspa < Formula
   depends_on 'ladspa_header' => :build
 
   def install
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
     system "make install OCAMLFIND_LDCONF=ignore"
-    mkdir_p "#{lib}/ocaml/stublibs"
-    system "mv #{lib}/ocaml/site-lib/*/*stubs.so #{lib}/ocaml/stublibs"
+    Dir.glob("#{lib}/ocaml/site-lib/**/*.h").each { |header| mkdir_p "#{include}"; mv header, "#{include}/" }
+    Dir.glob("#{lib}/ocaml/site-lib/**/*stubs.so").each { |so| mkdir_p "#{lib}/ocaml/stublibs"; mv so, "#{lib}/ocaml/stublibs/" }    
   end
 end

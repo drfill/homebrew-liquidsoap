@@ -59,8 +59,9 @@
 * libpng support in camlimages (MacOSX native pnglib has no support)
 * GD
 * DSSI
-* LADSPA
-* Various Sound Daemons like ALSA/Portaudio/Pulseaudio/JACK/GStreamer
+* SDL
+* Gstreamer
+* Various Sound Daemons like ALSA and Pulseaudio
 
 ## Bugs and other caveats
 

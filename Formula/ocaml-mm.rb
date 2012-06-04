@@ -11,15 +11,17 @@ class OcamlMm < Formula
   depends_on 'ocaml-theora' => :optional
   depends_on 'ocaml-ao' => :optional
   depends_on 'ocaml-mad' => :optional
+#  depends_on 'ocaml-sdl' => :optional
+#  depends_on 'ocaml-gstreamer' => :optional
 
   def install
-    ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.j1
+    ENV.append "OCAMLPATH", "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
+    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
     system "make install OCAMLFIND_LDCONF=ignore"
-    mkdir_p "#{lib}/ocaml/stublibs"
-    system "mv #{lib}/ocaml/site-lib/*/*stubs.so #{lib}/ocaml/stublibs"
+    Dir.glob("#{lib}/ocaml/site-lib/**/*stubs.so").each { |so| mkdir_p "#{lib}/ocaml/stublibs"; mv so, "#{lib}/ocaml/stublibs/" }
   end
 end

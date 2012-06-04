@@ -9,10 +9,11 @@ class OcamlCry < Formula
   depends_on 'ocaml-findlib' => :build
 
   def install
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
-    system "make install"
+    system "make install OCAMLFIND_LDCONF=ignore"
+    Dir.glob("#{lib}/ocaml/site-lib/**/*stubs.so").each { |so| mkdir_p "#{lib}/ocaml/stublibs"; mv so, "#{lib}/ocaml/stublibs/" }
   end
 end

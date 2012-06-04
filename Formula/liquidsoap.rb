@@ -50,6 +50,7 @@ class Liquidsoap < Formula
   depends_on 'ocaml-portaudio' if ARGV.include? "--with-all" or ARGV.build_head?
   depends_on 'ocaml-bjack' if ARGV.include? "--with-all" or ARGV.build_head?
   depends_on 'ocaml-ladspa' if ARGV.include? "--with-all" or ARGV.build_head?
+  depends_on 'XML::DOM' => :perl
 
   def options
     [['--with-samplerate', "Enables Samplerate library support"],
@@ -66,9 +67,9 @@ class Liquidsoap < Formula
   end
   
   def install
-    ENV['MAKEFLAGS'] = "-j2"
-    ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.append 'MAKEFLAGS', "-j2"
+    ENV.append 'OCAMLPATH', "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
+    ENV.append 'OCAMLFIND_DESTDIR', "#{lib}/ocaml/site-lib"
     system './configure', "--prefix=#{prefix}"
     system 'make'
     system 'make', 'doc'

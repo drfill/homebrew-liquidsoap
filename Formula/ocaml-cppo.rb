@@ -10,7 +10,7 @@ class OcamlCppo < Formula
 
   def install
     ENV.j1
-    ENV['PREFIX'] = prefix
+    ENV.append "PREFIX", prefix
     system 'make'
     mkdir_p "#{prefix}/bin"
     system "make", "install"

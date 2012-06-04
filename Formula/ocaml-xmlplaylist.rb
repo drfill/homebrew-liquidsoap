@@ -8,10 +8,11 @@ class OcamlXmlplaylist < Formula
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'ocaml-xmlm' => :build
+  depends_on 'ocaml-net' => :build
 
   def install
-    ENV['OCAMLPATH'] = "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.append "OCAMLPATH", "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
+    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"

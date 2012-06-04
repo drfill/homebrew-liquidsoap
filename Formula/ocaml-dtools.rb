@@ -10,7 +10,8 @@ class OcamlDtools < Formula
   depends_on 'ocaml-syslog' => :build
 
   def install
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.j1
+    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"

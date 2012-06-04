@@ -11,8 +11,7 @@ class OcamlZip < Formula
     inreplace "Makefile", "INSTALLDIR=`$(OCAMLC) -where`/zip", "INSTALLDIR=#{lib}/ocaml/site-lib/zip"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib/zip"
-    mkdir_p "#{lib}/ocaml/stublibs"
-    system "mv dllcamlzip.so #{lib}/ocaml/stublibs"
-    system "make install"
+    system "make install OCAMLFIND_LDCONF=ignore"
+    Dir.glob("#{lib}/ocaml/site-lib/**/*.so").each { |so| mkdir_p "#{lib}/ocaml/stublibs"; mv so, "#{lib}/ocaml/stublibs/" }
   end
 end

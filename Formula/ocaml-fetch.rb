@@ -10,10 +10,11 @@ class OcamlFetch < Formula
   depends_on 'ocaml-ftp' => :optional
 
   def install
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.j1
+    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}", "--without-smbclient"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
-    system "make install"
+    system "make install OCAMLFIND_LDCONF=ignore"
   end
 end

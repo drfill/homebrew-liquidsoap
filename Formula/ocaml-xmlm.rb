@@ -9,7 +9,7 @@ class OcamlXmlm < Formula
   depends_on 'ocaml-findlib' => :build
 
   def install
-    ENV['OCAMLFIND_DESTDIR'] = "#{lib}/ocaml/site-lib"
+    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "ocaml", "setup.ml", "-configure", "--prefix", "#{prefix}"
     system "ocaml", "setup.ml", "-build"
     mkdir_p "#{lib}/ocaml/site-lib"
