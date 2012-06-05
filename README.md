@@ -50,8 +50,26 @@
     --with-speech
             Enables Festival speech support (experimental)
 
+    --with-gd
+            Enables GD library support
+
+    --with-mp3
+            Enables Lame MP3 library support
+
+    --with-bjack
+            Enables JACK Sound processing library support
+
+    --with-ladspa
+            Enables LADSPA Sound processing plugins
+
+    --with-portaudio
+            Enables PortAudio Sound library
+
     --with-all
             Includes all available modules in Liquidsoap
+
+    --with-doc
+            Build documentation for Liquidsoap
 
 ## Usage
 
@@ -60,7 +78,6 @@
 ## Todo
 
 * libpng support in camlimages (MacOSX native pnglib has no support)
-* GD
 * DSSI
 * SDL
 * Gstreamer
