@@ -11,6 +11,7 @@ class OcamlSoundtouch < Formula
   depends_on "soundtouch" => :build if Hardware.is_64_bit?
 
   def install
+    ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"

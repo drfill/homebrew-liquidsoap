@@ -12,6 +12,7 @@ class OcamlYojson < Formula
   depends_on 'ocaml-cppo' => :build
 
   def install
+    ENV.j1
     ENV.append "OCAMLPATH", "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system 'make'

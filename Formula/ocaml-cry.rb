@@ -9,6 +9,7 @@ class OcamlCry < Formula
   depends_on 'ocaml-findlib' => :build
 
   def install
+    ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"

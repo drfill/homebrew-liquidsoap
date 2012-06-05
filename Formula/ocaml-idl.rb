@@ -8,6 +8,7 @@ class OcamlIdl < Formula
   depends_on 'objective-caml' => :build
 
   def install
+    ENV.j1
     cp "config/Makefile.unix", "config/Makefile"
     inreplace "config/Makefile", "OCAMLLIB=/usr/local/lib/ocaml", "OCAMLLIB=#{lib}/ocaml"
     inreplace "config/Makefile", "BINDIR=/usr/local/bin", "BINDIR=#{bin}"

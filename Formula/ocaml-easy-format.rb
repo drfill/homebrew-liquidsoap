@@ -9,6 +9,7 @@ class OcamlEasyFormat < Formula
   depends_on 'ocaml-findlib' => :build
 
   def install
+    ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"

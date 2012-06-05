@@ -12,6 +12,7 @@ class OcamlNet < Formula
   depends_on 'ocaml-cryptokit' => :build
 
   def install
+    ENV.j1
     ENV.append "OCAMLPATH", "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "-enable-pcre", "-enable-ssl", "-disable-zip", "-enable-crypto", "-bindir", "#{prefix}/bin", "-datadir", "#{lib}"

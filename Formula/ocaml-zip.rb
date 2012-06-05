@@ -8,6 +8,7 @@ class OcamlZip < Formula
   depends_on 'objective-caml' => :build
 
   def install
+    ENV.j1
     inreplace "Makefile", "INSTALLDIR=`$(OCAMLC) -where`/zip", "INSTALLDIR=#{lib}/ocaml/site-lib/zip"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib/zip"

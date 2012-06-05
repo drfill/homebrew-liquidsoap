@@ -10,6 +10,7 @@ class OcamlLo < Formula
   depends_on 'liblo' => :build
 
   def install
+    ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"

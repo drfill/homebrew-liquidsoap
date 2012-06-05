@@ -16,6 +16,7 @@ class OcamlCamlimages < Formula
   depends_on 'ghostscript' => :build
   
   def install
+    ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     ENV['OCAMLFIND_LDCONF'] = 'ignore'
     inreplace "OMakefile", "/usr/include/X11", "/usr/include\n  /usr/X11/include\n  #{HOMEBREW_PREFIX}/include/X11"

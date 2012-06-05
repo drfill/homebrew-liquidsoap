@@ -12,8 +12,8 @@ class OcamlLame < Formula
   def install
     ENV.llvm if MacOS.xcode_version >= "4.2"
     ENV.gcc if MacOS.xcode_version < "4.2"
-    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     ENV.j1
+    ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"

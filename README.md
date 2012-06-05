@@ -20,35 +20,38 @@
 
 ### Options available in homebrew-liquidsoap formula
 
-	--with-samplerate
-		Enables Samplerate library support
+    --with-samplerate
+            Enables Samplerate library support
 
-	--with-xmlplaylist
-		Enables XmlPlaylist support
+    --with-xmlplaylist
+            Enables XmlPlaylist support
 
-	--with-lastfm
-		Enables LAST.fm support
+    --with-lastfm
+            Enables LAST.fm support
 
-	--with-soundtouch
-		Enables Soundtouch library support
+    --with-soundtouch
+            Enables Soundtouch library support
 
-	--with-aac
-		Enables AAC library support
+    --with-aac
+            Enables AAC library support
 
-	--with-aacplus
-		Enables AAC+ library support
+    --with-aacplus
+            Enables AAC+ library support
 
-	--with-lo
-		Enables lo library support
+    --with-lo
+            Enables lo library support
 
-	--with-video-processing
-		Enables video processing modules
+    --with-video-processing
+            Enables video processing modules
 
-	--with-ffmpeg
-		Enables FFmpeg support
+    --with-ffmpeg
+            Enables FFmpeg support
 
-	--with-all
-		Includes all available modules in Liquidsoap
+    --with-speech
+            Enables Festival speech support (experimental)
+
+    --with-all
+            Includes all available modules in Liquidsoap
 
 ## Usage
 
