@@ -169,7 +169,7 @@ class Liquidsoap < Formula
   depends_on 'ocaml-mm' => :build # Depends on all available
 
   def options
-    opts = [
+    [
       ['--with-samplerate', "Enables Samplerate library support"],
       ['--with-xmlplaylist', "Enables XmlPlaylist support"],
       ['--with-lastfm', "Enables LAST.fm support"],
@@ -193,10 +193,9 @@ class Liquidsoap < Formula
       ['--with-theora', "Enables OGG Theora video library support"],
       ['--with-dirac', "Enables Dirac video library support"],
       ['--with-shout', "Enables Icecast and Shoutcast  streaming library support"],
-    ]
-    opts << ['--with-mp3', "Enables Lame MP3 library support"] if Hardware.is_64_bit?
-    opts << ['--with-sdl', "Enables SDL processing modules (only 32 bit)"] if Hardware.is_32_bit?
-    opts.sort
+      ['--with-mp3', "**** (only 64 bit) **** \n\tEnables Lame MP3 library support"],
+      ['--with-sdl', "**** (only 32 bit) **** \n\tEnables SDL processing modules"],
+    ].sort
   end
 
   def install
@@ -207,53 +206,53 @@ class Liquidsoap < Formula
             "--disable-ldconf",
            ]
 
-    args << "--with-ao-dir=/dev/null" unless ao?
+    args << "--with-ao-dir=/usr/lib" unless ao?
 
-    args << "--with-mad-dir=/dev/null" unless mp3? or mad?
+    args << "--with-mad-dir=/usr/lib" unless mp3? or mad?
 
-    args << "--with-taglib-dir=/dev/null" unless mp3? or mad?
+    args << "--with-taglib-dir=/usr/lib" unless mp3? or mad?
 
-    args << "--with-lame-dir=/dev/null" unless mp3?
+    args << "--with-lame-dir=/usr/lib" unless mp3?
 
-    args << "--with-flac-dir=/dev/null" unless flac?
+    args << "--with-flac-dir=/usr/lib" unless flac?
 
-    args << "--with-faad-dir=/dev/null" unless aac?
+    args << "--with-faad-dir=/usr/lib" unless aac?
 
-    args << "--with-speex-dir=/dev/null" unless speex?
+    args << "--with-speex-dir=/usr/lib" unless speex?
 
-    args << "--with-theora-dir=/dev/null" unless theora? or video_processing?
+    args << "--with-theora-dir=/usr/lib" unless theora? or video_processing?
 
-    args << "--with-schroedinger-dir=/dev/null" unless schroedinger? or video_processing?
+    args << "--with-schroedinger-dir=/usr/lib" unless schroedinger? or video_processing?
 
-    args << "--with-cry-dir=/dev/null" unless cry?
+    args << "--with-cry-dir=/usr/lib" unless cry?
 
-    args << "--with-gd-dir=/dev/null" unless gd?
+    args << "--with-gd-dir=/usr/lib" unless gd?
 
-    args << "--with-samplerate-dir=/dev/null" unless samplerate?
+    args << "--with-samplerate-dir=/usr/lib" unless samplerate?
 
-    args << "--with-xmlplaylist-dir=/dev/null" unless xmlplaylist? or lastfm?
+    args << "--with-xmlplaylist-dir=/usr/lib" unless xmlplaylist? or lastfm?
 
-    args << "--with-lastfm-dir=/dev/null" unless lastfm?
+    args << "--with-lastfm-dir=/usr/lib" unless lastfm?
 
-    args << "--with-soundtouch-dir=/dev/null" unless soundtouch?
+    args << "--with-soundtouch-dir=/usr/lib" unless soundtouch?
 
-    args << "--with-voaacenc-dir=/dev/null" unless aac?
+    args << "--with-voaacenc-dir=/usr/lib" unless aac?
 
-    args << "--with-aacplus-dir=/dev/null" unless aacplus?
+    args << "--with-aacplus-dir=/usr/lib" unless aacplus?
 
-    args << "--with-lo-dir=/dev/null" unless lo?
+    args << "--with-lo-dir=/usr/lib" unless lo?
 
     args << "--disable-graphics" unless video_processing?
 
-    args << "--with-gavl-dir=/dev/null" unless video_processing?
+    args << "--with-gavl-dir=/usr/lib" unless video_processing?
 
-    args << "--with-camlimages-dir=/dev/null" unless video_processing?
+    args << "--with-camlimages-dir=/usr/lib" unless video_processing?
 
-    args << "--with-bjack-dir=/dev/null" unless bjack?
+    args << "--with-bjack-dir=/usr/lib" unless bjack?
 
-    args << "--with-ladspa-dir=/dev/null" unless ladspa?
+    args << "--with-ladspa-dir=/usr/lib" unless ladspa?
 
-    args << "--with-portaudio-dir=/dev/null" unless portaudio?
+    args << "--with-portaudio-dir=/usr/lib" unless portaudio?
 
     args << "--without-sdl" unless sdl?
 
@@ -263,7 +262,7 @@ class Liquidsoap < Formula
       opoo 'Gstreamer could not compile due to errors...'
       opoo 'Issue on https://github.com/drfill/homebrew-liquidsoap/issues/4'
     end
-    args << "--with-gstreamer-dir=/dev/null"
+    args << "--with-gstreamer-dir=/usr/lib"
 
     rev = self.version+'-macosx-snow-leopard' if MacOS.snow_leopard?
     rev = self.version+'-macosx-lion' if MacOS.lion?

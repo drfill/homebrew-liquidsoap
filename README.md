@@ -63,7 +63,8 @@
             Enables lo library support
 
     --with-mp3
-            Enables Lame MP3 library support (Only 64 bit)
+            **** (only 64 bit) **** 
+            Enables Lame MP3 library support
 
     --with-portaudio
             Enables PortAudio Sound library
@@ -72,7 +73,8 @@
             Enables Samplerate library support
 
     --with-sdl
-            Enables SDL processing modules (only 32 bit)
+            **** (only 32 bit) **** 
+            Enables SDL processing modules
 
     --with-shout
             Enables Icecast and Shoutcast  streaming library support
