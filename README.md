@@ -102,14 +102,14 @@
 ## Todo
 
 * libpng support in camlimages (MacOSX native pnglib has no support)
-* DSSI
-* SDL
-* Gstreamer
 * Various Sound Daemons like ALSA and Pulseaudio
 
 ## Bugs and other caveats
 
-1. Lame library compiled in only if CPU x64
+* Lame library compiled in only if CPU x64
+* SDL
+* Gstreamer
+* DSSI
 
 ## License
 
