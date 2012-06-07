@@ -72,10 +72,6 @@
     --with-samplerate
             Enables Samplerate library support
 
-    --with-sdl
-            **** (only 32 bit) **** 
-            Enables SDL processing modules
-
     --with-shout
             Enables Icecast and Shoutcast  streaming library support
 
@@ -109,7 +105,6 @@
 ## Bugs and other caveats
 
 * Lame library compiled in only if CPU x64
-* SDL
 * Gstreamer
 * DSSI
 

@@ -49,10 +49,6 @@ def speech?
   ARGV.include? '--with-speech' or ARGV.include? '--with-all'
 end
 
-def sdl?
-  (ARGV.include? '--with-sdl' or ARGV.include? '--with-all') and Hardware.is_32_bit?
-end
-
 def gstreamer?
   ARGV.include? '--with-gstreamer' or ARGV.include? '--with-all'
 end
@@ -145,7 +141,6 @@ class Liquidsoap < Formula
   depends_on 'ocaml-speex' if speex?
   depends_on 'ocaml-theora' if theora? or video_processing?
   depends_on 'ocaml-schroedinger' if schroedinger? or video_processing?
-  depends_on 'ocaml-sdl' if sdl?
   depends_on 'ocaml-gd4o' if gd?
   depends_on "ocaml-samplerate" if samplerate?
   depends_on "ocaml-xmlm" if lastfm? or xmlplaylist?
@@ -194,7 +189,6 @@ class Liquidsoap < Formula
       ['--with-dirac', "Enables Dirac video library support"],
       ['--with-shout', "Enables Icecast and Shoutcast  streaming library support"],
       ['--with-mp3', "**** (only 64 bit) **** \n\tEnables Lame MP3 library support"],
-      ['--with-sdl', "**** (only 32 bit) **** \n\tEnables SDL processing modules"],
     ].sort
   end
 
@@ -253,8 +247,6 @@ class Liquidsoap < Formula
     args << "--with-ladspa-dir=/usr/lib" unless ladspa?
 
     args << "--with-portaudio-dir=/usr/lib" unless portaudio?
-
-    args << "--without-sdl" unless sdl?
 
     # Gstreamer bug
     if gstreamer?
