@@ -1,4 +1,5 @@
 require 'formula'
+require 'etc'
 
 def gd?
   ARGV.include? '--with-gd' or ARGV.include? '--with-all'
@@ -49,15 +50,19 @@ def speech?
 end
 
 def sdl?
-  ARGV.include? '--with-sdl' or ARGV.include? '--with-all'
+  (ARGV.include? '--with-sdl' or ARGV.include? '--with-all') and Hardware.is_32_bit?
 end
 
 def gstreamer?
   ARGV.include? '--with-gstreamer' or ARGV.include? '--with-all'
 end
 
-def lame?
+def mad?
   ARGV.include? '--with-mp3' or ARGV.include? '--with-all'
+end
+
+def mp3?
+  (ARGV.include? '--with-mp3' or ARGV.include? '--with-all') and Hardware.is_64_bit?
 end
 
 def bjack?
@@ -76,8 +81,36 @@ def soundtouch?
   ARGV.include? '--with-soundtouch' or ARGV.include? '--with-all'
 end
 
+def ao?
+  ARGV.include? '--with-ao' or ARGV.include? '--with-all'
+end
+
+def flac?
+  ARGV.include? '--with-flac' or ARGV.include? '--with-all'
+end
+
+def speex?
+  ARGV.include? '--with-speex' or ARGV.include? '--with-all'
+end
+
+def theora?
+  ARGV.include? '--with-theora' or ARGV.include? '--with-all'
+end
+
+def schroedinger?
+  ARGV.include? '--with-dirac' or ARGV.include? '--with-all'
+end
+
+def cry?
+  ARGV.include? '--with-shout' or ARGV.include? '--with-all'
+end
+
 def build_doc?
   ARGV.include? '--with-doc'
+end
+
+def inc_all?
+  ARGV.include? '--with-all'
 end
 
 class Liquidsoap < Formula
@@ -92,51 +125,27 @@ class Liquidsoap < Formula
     exit
   end
 
-  # Defaults
-  args = [
-    "--with-dtools",
-    "--with-duppy",
-    "--with-mm",
-    "--with-pcre",
-    "--with-camomile",
-    "--with-magic",
-    "--with-yojson",
-    "--with-ao", # till 1.0.1
-    "--with-ogg",
-    "--with-vorbis", # till 1.0.1
-    "--with-mad", # till 1.0.1
-    "--with-taglib", # till 1.0.1, enables when lame installed
-    "--with-lame", # till 1.0.1
-    "--with-flac", # till 1.0.1
-    "--with-faad", # till 1.0.1
-    "--with-speex", # till 1.0.1
-    "--with-theora", # till 1.0.1
-    "--with-schroedinger", # till 1.0.1
-    "--with-cry", # till 1.0.1
-  ]
-
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'ocaml-dtools' => :build
   depends_on 'ocaml-duppy' => :build
-  depends_on 'ocaml-cry' # This package contains an OCaml low level implementation of the shout protocol. --with-shout in 1.0.1 version
+  depends_on 'ocaml-cry' if cry? # This package contains an OCaml low level implementation of the shout protocol.
   depends_on 'ocaml-pcre'
   depends_on 'ocaml-camomile'
   depends_on 'ocaml-magic'
   depends_on 'ocaml-yojson'
-  depends_on 'ocaml-ao'
+  depends_on 'ocaml-ao' if ao?
   depends_on 'ocaml-ogg'
   depends_on 'ocaml-vorbis'
-  depends_on 'ocaml-mad'
-  depends_on 'ocaml-taglib'
-  depends_on 'ocaml-lame' if Hardware.is_64_bit? and lame?
-  depends_on 'ocaml-flac'
-  depends_on 'ocaml-faad'
-  depends_on 'ocaml-speex'
-  depends_on 'ocaml-theora'
-  depends_on 'ocaml-schroedinger'
-  # depends_on 'ocaml-sdl' if sdl?
-  depends_on 'ocaml-speex'
+  depends_on 'ocaml-mad' if mp3? or mad?
+  depends_on 'ocaml-taglib' if mp3? or mad?
+  depends_on 'ocaml-lame' if mp3?
+  depends_on 'ocaml-flac' if flac?
+  depends_on 'ocaml-faad' if aac?
+  depends_on 'ocaml-speex' if speex?
+  depends_on 'ocaml-theora' if theora? or video_processing?
+  depends_on 'ocaml-schroedinger' if schroedinger? or video_processing?
+  depends_on 'ocaml-sdl' if sdl?
   depends_on 'ocaml-gd4o' if gd?
   depends_on "ocaml-samplerate" if samplerate?
   depends_on "ocaml-xmlm" if lastfm? or xmlplaylist?
@@ -148,7 +157,7 @@ class Liquidsoap < Formula
   depends_on 'ocaml-lo' if lo?
   depends_on "ocaml-camlimages" if video_processing?
   depends_on "ocaml-gavl" if video_processing?
-  # depends_on 'ocaml-gstreamer' if gstreamer?
+  depends_on 'ocaml-gstreamer' if gstreamer?
   depends_on 'ffmpeg' if ffmpeg?
   depends_on 'ocaml-portaudio' if portaudio?
   depends_on 'ocaml-bjack' if bjack?
@@ -156,40 +165,137 @@ class Liquidsoap < Formula
   depends_on 'sox' if speech?
   depends_on 'festival' if speech?
   depends_on 'XML::DOM' => :perl if build_doc?
-  depends_on 'ocaml-mm' => :build
+
+  depends_on 'ocaml-mm' => :build # Depends on all available
 
   def options
-    [['--with-samplerate', "Enables Samplerate library support"],
-    ['--with-xmlplaylist', "Enables XmlPlaylist support"],
-    ['--with-lastfm', "Enables LAST.fm support"],
-    ['--with-soundtouch', "Enables Soundtouch library support"],
-    ['--with-aac', "Enables AAC library support"],
-    ['--with-aacplus', "Enables AAC+ library support"],
-    ['--with-lo', "Enables lo library support"],
-    ['--with-video-processing', "Enables video processing modules"],
-    # ['--with-gstreamer', "Enables GStreamer processing modules"],
-    # ['--with-sdl', "Enables SDL MIDI processing modules"],
-    ['--with-ffmpeg', "Enables FFmpeg support"],
-    ['--with-speech', "Enables Festival speech support (experimental)"],
-    ['--with-gd', "Enables GD library support"],
-    ['--with-mp3', "Enables Lame MP3 library support"],
-    ['--with-bjack', "Enables JACK Sound processing library support"],
-    ['--with-ladspa', "Enables LADSPA Sound processing plugins"],
-    ['--with-portaudio', "Enables PortAudio Sound library"],
-    ['--with-all', "Includes all available modules in Liquidsoap"],
-    ['--with-doc', "Build documentation for Liquidsoap"],]
+    opts = [
+      ['--with-samplerate', "Enables Samplerate library support"],
+      ['--with-xmlplaylist', "Enables XmlPlaylist support"],
+      ['--with-lastfm', "Enables LAST.fm support"],
+      ['--with-soundtouch', "Enables Soundtouch library support"],
+      ['--with-aac', "Enables AAC library support"],
+      ['--with-aacplus', "Enables AAC+ library support"],
+      ['--with-lo', "Enables lo library support"],
+      ['--with-video-processing', "Enables video processing modules"],
+      ['--with-gstreamer', "Enables GStreamer processing modules"],
+      ['--with-ffmpeg', "Enables FFmpeg support"],
+      ['--with-speech', "Enables Festival speech support (experimental)"],
+      ['--with-gd', "Enables GD library support"],
+      ['--with-bjack', "Enables JACK Sound processing library support"],
+      ['--with-ladspa', "Enables LADSPA Sound processing plugins"],
+      ['--with-portaudio', "Enables PortAudio Sound library"],
+      ['--with-all', "Includes all available modules in Liquidsoap"],
+      ['--with-doc', "Build documentation for Liquidsoap"],
+      ['--with-ao', "Enables libAO library support"],
+      ['--with-flac', "Enables Flac library support"],
+      ['--with-speex', "Enables SPEEX library support"],
+      ['--with-theora', "Enables OGG Theora video library support"],
+      ['--with-dirac', "Enables Dirac video library support"],
+      ['--with-shout', "Enables Icecast and Shoutcast  streaming library support"],
+    ]
+    opts << ['--with-mp3', "Enables Lame MP3 library support"] if Hardware.is_64_bit?
+    opts << ['--with-sdl', "Enables SDL processing modules (only 32 bit)"] if Hardware.is_32_bit?
+    opts.sort
   end
 
   def install
+    args = [
+            "--with-user="+Etc.getlogin,
+            "--with-group="+Etc.getgrgid(Process.egid).name,
+            "--with-default-font=/Library/Fonts/Verdana.ttf",
+            "--disable-ldconf",
+           ]
+
+    args << "--with-ao-dir=/dev/null" unless ao?
+
+    args << "--with-mad-dir=/dev/null" unless mp3? or mad?
+
+    args << "--with-taglib-dir=/dev/null" unless mp3? or mad?
+
+    args << "--with-lame-dir=/dev/null" unless mp3?
+
+    args << "--with-flac-dir=/dev/null" unless flac?
+
+    args << "--with-faad-dir=/dev/null" unless aac?
+
+    args << "--with-speex-dir=/dev/null" unless speex?
+
+    args << "--with-theora-dir=/dev/null" unless theora? or video_processing?
+
+    args << "--with-schroedinger-dir=/dev/null" unless schroedinger? or video_processing?
+
+    args << "--with-cry-dir=/dev/null" unless cry?
+
+    args << "--with-gd-dir=/dev/null" unless gd?
+
+    args << "--with-samplerate-dir=/dev/null" unless samplerate?
+
+    args << "--with-xmlplaylist-dir=/dev/null" unless xmlplaylist? or lastfm?
+
+    args << "--with-lastfm-dir=/dev/null" unless lastfm?
+
+    args << "--with-soundtouch-dir=/dev/null" unless soundtouch?
+
+    args << "--with-voaacenc-dir=/dev/null" unless aac?
+
+    args << "--with-aacplus-dir=/dev/null" unless aacplus?
+
+    args << "--with-lo-dir=/dev/null" unless lo?
+
+    args << "--disable-graphics" unless video_processing?
+
+    args << "--with-gavl-dir=/dev/null" unless video_processing?
+
+    args << "--with-camlimages-dir=/dev/null" unless video_processing?
+
+    args << "--with-bjack-dir=/dev/null" unless bjack?
+
+    args << "--with-ladspa-dir=/dev/null" unless ladspa?
+
+    args << "--with-portaudio-dir=/dev/null" unless portaudio?
+
+    args << "--without-sdl" unless sdl?
+
+    # Gstreamer bug
+    if gstreamer?
+      opoo 'Sorry!'
+      opoo 'Gstreamer could not compile due to errors...'
+      opoo 'Issue on https://github.com/drfill/homebrew-liquidsoap/issues/4'
+    end
+    args << "--with-gstreamer-dir=/dev/null"
+
+    rev = self.version+'-macosx-snow-leopard' if MacOS.snow_leopard?
+    rev = self.version+'-macosx-lion' if MacOS.lion?
+    rev = self.version+'-macosx-mountain-lion' if MacOS.mountain_lion?
+
     ENV.append 'MAKEFLAGS', "-j2"
     ENV.append 'OCAMLPATH', "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append 'OCAMLFIND_DESTDIR', "#{lib}/ocaml/site-lib"
-    inreplace "configure", "dummy text2wave", "dummy text2wave.sh" if ARGV.include? "--with-speech" or ARGV.include? "--with-all"
-    system './configure', "--prefix=#{prefix}"
+    inreplace "configure", "dummy text2wave", "dummy text2wave.sh" if speech?
+    inreplace "configure", self.version, rev
+    system './configure', "--prefix=#{prefix}", *args
     system 'make'
     system 'make', 'doc' if build_doc?
     remove_file 'INSTALL'
+    mkdir_p "#{var}/log/liquidsoap" unless File.directory? "#{var}/log/liquidsoap"
+    mkdir_p "#{var}/run/liquidsoap" unless File.directory? "#{var}/run/liquidsoap"
     system 'make', 'install'
+  end
+
+  def caveats
+    s = ""
+    unless Hardware.is_64_bit?
+      s += <<-EOS.undent
+        * MP3 (Lame) Output support only available if CPU x86_64
+
+      EOS
+    end
+    s += <<-EOS.undent
+        * There are no PulseAudio support
+                Reason: Build Failure (https://github.com/mxcl/homebrew/pull/9226)
+
+    EOS
   end
 
   def test

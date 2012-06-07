@@ -20,56 +20,80 @@
 
 ### Options available in homebrew-liquidsoap formula
 
-    --with-samplerate
-            Enables Samplerate library support
-
-    --with-xmlplaylist
-            Enables XmlPlaylist support
-
-    --with-lastfm
-            Enables LAST.fm support
-
-    --with-soundtouch
-            Enables Soundtouch library support
-
     --with-aac
-            Enables AAC library support
+	Enables AAC library support
 
     --with-aacplus
             Enables AAC+ library support
 
-    --with-lo
-            Enables lo library support
+    --with-all
+            Includes all available modules in Liquidsoap
 
-    --with-video-processing
-            Enables video processing modules
-
-    --with-ffmpeg
-            Enables FFmpeg support
-
-    --with-speech
-            Enables Festival speech support (experimental)
-
-    --with-gd
-            Enables GD library support
-
-    --with-mp3
-            Enables Lame MP3 library support
+    --with-ao
+            Enables libAO library support
 
     --with-bjack
             Enables JACK Sound processing library support
 
+    --with-dirac
+            Enables Dirac video library support
+
+    --with-doc
+            Build documentation for Liquidsoap
+
+    --with-ffmpeg
+            Enables FFmpeg support
+
+    --with-flac
+            Enables Flac library support
+
+    --with-gd
+            Enables GD library support
+
+    --with-gstreamer
+            Enables GStreamer processing modules
+
     --with-ladspa
             Enables LADSPA Sound processing plugins
+
+    --with-lastfm
+            Enables LAST.fm support
+
+    --with-lo
+            Enables lo library support
+
+    --with-mp3
+            Enables Lame MP3 library support (Only 64 bit)
 
     --with-portaudio
             Enables PortAudio Sound library
 
-    --with-all
-            Includes all available modules in Liquidsoap
+    --with-samplerate
+            Enables Samplerate library support
 
-    --with-doc
-            Build documentation for Liquidsoap
+    --with-sdl
+            Enables SDL processing modules (only 32 bit)
+
+    --with-shout
+            Enables Icecast and Shoutcast  streaming library support
+
+    --with-soundtouch
+            Enables Soundtouch library support
+
+    --with-speech
+            Enables Festival speech support (experimental)
+
+    --with-speex
+            Enables SPEEX library support
+
+    --with-theora
+            Enables OGG Theora video library support
+
+    --with-video-processing
+            Enables video processing modules
+
+    --with-xmlplaylist
+            Enables XmlPlaylist support
 
 ## Usage
 
