@@ -21,7 +21,7 @@
 ### Options available in homebrew-liquidsoap formula
 
     --with-aac
-	Enables AAC library support
+            Enables AAC library support
 
     --with-aacplus
             Enables AAC+ library support
