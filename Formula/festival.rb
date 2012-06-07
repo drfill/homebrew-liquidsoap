@@ -8,7 +8,7 @@ class Festival < Formula
   keg_only ""
 
   depends_on 'speech-tools' => :build
-  
+
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     inreplace "config/config", "EST=$(TOP)/../speech_tools", "EST=#{Formula.factory("speech-tools").prefix}"

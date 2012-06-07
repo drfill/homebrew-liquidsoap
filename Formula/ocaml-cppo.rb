@@ -12,7 +12,7 @@ class OcamlCppo < Formula
     ENV.j1
     ENV.append "PREFIX", prefix
     system 'make'
-    mkdir_p "#{prefix}/bin"
+    mkdir_p "#{bin}"
     system "make", "install"
   end
 end

@@ -10,7 +10,7 @@ class OcamlGd4o < Formula
   depends_on 'libzip' => :build
   depends_on 'jpeg' => :build
   depends_on 'gd' => :build
-  
+
   def install
     ENV.x11
     ENV.j1

@@ -1,7 +1,7 @@
 require 'formula'
 
 class OcamlCamomile < Formula
-  url 'http://prdownloads.sourceforge.net/camomile/camomile-0.8.3.tar.bz2'
+  url 'http://sourceforge.net/projects/camomile/files/camomile/0.8.3/camomile-0.8.3.tar.bz2'
   homepage 'http://camomile.sourceforge.net/'
   md5 'c6476bdb4138d222bc14396a82205034'
 

@@ -14,7 +14,7 @@ class OcamlCamlimages < Formula
   depends_on 'libxpm' => :build
   depends_on 'giflib' => :build
   depends_on 'ghostscript' => :build
-  
+
   def install
     ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
