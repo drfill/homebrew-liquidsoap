@@ -2,16 +2,16 @@ require 'formula'
 
 class OcamlFindlib < Formula
   homepage 'http://projects.camlcity.org/projects/findlib.html'
-  url 'http://download.camlcity.org/download/findlib-1.2.8.tar.gz'
-  md5 'a1da0fddf589ae62fa9b50799cd04c17'
+  url 'http://download.camlcity.org/download/findlib-1.3.1.tar.gz'
+  md5 'e632bad87f1c7be9414a6b754232ba01'
 
-  depends_on 'objective-caml'
+  depends_on 'objective-caml' => :build
 
   def install
-    system './configure', '-config',  "#{prefix}/etc"
+    system "./configure", "-config #{etc}/findlib.conf", "-sitelib #{HOMEBREW_PREFIX}/lib/ocaml/site-lib", "-system osx", "-bindir #{bin}", "-mandir #{man}", "-with-toolbox"
     system 'make'
-    system "make prefix=#{prefix} OCAML_SITELIB=/lib/ocaml/site-lib \
-                 OCAMLFIND_BIN=/bin OCAMLFIND_MAN=/share/man \
-                 OCAML_CORE_STDLIB=/lib/ocaml OCAMLFIND_CONF=/etc install"
+    system 'make opt'
+    mkdir_p "#{lib}/ocaml/site-lib"
+    system "make install"
   end
 end

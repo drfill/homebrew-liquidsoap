@@ -20,29 +20,78 @@
 
 ### Options available in homebrew-liquidsoap formula
 
-	--with-samplerate
-		Enables Samplerate library support
+    --with-aac
+            Enables AAC library support
 
-	--with-xmlplaylist
-		Enables XmlPlaylist support
+    --with-aacplus
+            Enables AAC+ library support
 
-	--with-lastfm
-		Enables LAST.fm support
+    --with-all
+            Includes all available modules in Liquidsoap
 
-	--with-soundtouch
-		Enables Soundtouch library support
+    --with-ao
+            Enables libAO library support
 
-	--with-aac
-		Enables AAC library support
+    --with-bjack
+            Enables JACK Sound processing library support
 
-	--with-aacplus
-		Enables AAC+ library support
+    --with-dirac
+            Enables Dirac video library support
 
-	--with-lo
-		Enables lo library support
+    --with-doc
+            Build documentation for Liquidsoap
 
-	--with-video-processing
-		Enables video processing modules (currently in development)
+    --with-ffmpeg
+            Enables FFmpeg support
+
+    --with-flac
+            Enables Flac library support
+
+    --with-gd
+            Enables GD library support
+
+    --with-gstreamer
+            Enables GStreamer processing modules
+
+    --with-ladspa
+            Enables LADSPA Sound processing plugins
+
+    --with-lastfm
+            Enables LAST.fm support
+
+    --with-lo
+            Enables lo library support
+
+    --with-mp3
+            **** (only 64 bit) **** 
+            Enables Lame MP3 library support
+
+    --with-portaudio
+            Enables PortAudio Sound library
+
+    --with-samplerate
+            Enables Samplerate library support
+
+    --with-shout
+            Enables Icecast and Shoutcast  streaming library support
+
+    --with-soundtouch
+            Enables Soundtouch library support
+
+    --with-speech
+            Enables Festival speech support (experimental)
+
+    --with-speex
+            Enables SPEEX library support
+
+    --with-theora
+            Enables OGG Theora video library support
+
+    --with-video-processing
+            Enables video processing modules
+
+    --with-xmlplaylist
+            Enables XmlPlaylist support
 
 ## Usage
 
@@ -51,14 +100,13 @@
 ## Todo
 
 * libpng support in camlimages (MacOSX native pnglib has no support)
-* GD
-* DSSI
-* LADSPA
-* Various Sound Daemons like ALSA/Portaudio/Pulseaudio/JACK/GStreamer
+* Various Sound Daemons like ALSA and Pulseaudio
 
 ## Bugs and other caveats
 
-1. Lame library compiled in only if CPU x64
+* Lame library compiled in only if CPU x64
+* Gstreamer
+* DSSI
 
 ## License
 

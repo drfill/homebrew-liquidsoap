@@ -6,7 +6,7 @@ class Libxpm < Formula
   md5 'cd15ee542d9f515538b4462a6f79d977'
 
   def install
-    ENV.x11 # if your formula requires any X11 headers
+    ENV.x11
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make install"

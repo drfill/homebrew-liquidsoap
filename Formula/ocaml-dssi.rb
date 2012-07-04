@@ -1,19 +1,21 @@
 require 'formula'
 
-class OcamlMagic < Formula
-  homepage 'http://sourceforge.net/projects/ocaml-magic/'
-  url 'http://sourceforge.net/projects/ocaml-magic/files/ocaml-magic/0.7/ocaml-magic-0.7.3.tar.gz'
-  md5 '5b8a4d149fe8ce095ab8115f2e49beba'
+class OcamlDssi < Formula
+  homepage 'http://liquidsoap.fm/'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-dssi/0.1.0/ocaml-dssi-0.1.0.tar.gz'
+  md5 '816bdbdf8a4fa842019367d07c3f6ac9'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'libmagic' => :build
+  depends_on 'ocaml-ladspa' => :build
+  depends_on 'libdssi' => :build
 
   def install
     ENV.j1
+    ENV.append "OCAMLPATH", "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
-    system './configure'
-    system 'make'
+    system "./configure", "--prefix=#{prefix}"
+    system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
     system "make install OCAMLFIND_LDCONF=ignore"
     Dir.glob("#{lib}/ocaml/site-lib/**/*stubs.so").each { |so| mkdir_p "#{lib}/ocaml/stublibs"; mv so, "#{lib}/ocaml/stublibs/" }

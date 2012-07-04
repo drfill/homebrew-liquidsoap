@@ -1,18 +1,17 @@
 require 'formula'
 
-class OcamlMagic < Formula
-  homepage 'http://sourceforge.net/projects/ocaml-magic/'
-  url 'http://sourceforge.net/projects/ocaml-magic/files/ocaml-magic/0.7/ocaml-magic-0.7.3.tar.gz'
-  md5 '5b8a4d149fe8ce095ab8115f2e49beba'
+class OcamlCamomile < Formula
+  url 'http://sourceforge.net/projects/camomile/files/camomile/0.8.3/camomile-0.8.3.tar.bz2'
+  homepage 'http://camomile.sourceforge.net/'
+  md5 'c6476bdb4138d222bc14396a82205034'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'libmagic' => :build
 
   def install
     ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
-    system './configure'
+    system './configure', "--prefix=#{prefix}"
     system 'make'
     mkdir_p "#{lib}/ocaml/site-lib"
     system "make install OCAMLFIND_LDCONF=ignore"

@@ -1,18 +1,17 @@
 require 'formula'
 
-class OcamlMagic < Formula
-  homepage 'http://sourceforge.net/projects/ocaml-magic/'
-  url 'http://sourceforge.net/projects/ocaml-magic/files/ocaml-magic/0.7/ocaml-magic-0.7.3.tar.gz'
-  md5 '5b8a4d149fe8ce095ab8115f2e49beba'
+class OcamlPcre < Formula
+  homepage 'http://www.ocaml.info/home/ocaml_sources.html'
+  url 'https://bitbucket.org/mmottl/pcre-ocaml/downloads/pcre-ocaml-6.2.5.tar.gz'
+  md5 'a6f8873bbf5d2d0897654cc35fa59a42'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'libmagic' => :build
+  depends_on 'pcre' => :build
 
   def install
     ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
-    system './configure'
     system 'make'
     mkdir_p "#{lib}/ocaml/site-lib"
     system "make install OCAMLFIND_LDCONF=ignore"
