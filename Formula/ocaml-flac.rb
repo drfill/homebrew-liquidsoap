@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlFlac < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-flac/0.1.0/ocaml-flac-0.1.0.tar.gz'
-  md5 'cbe73d8494f4db74520f9334c0130c0e'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-flac/0.1.1/ocaml-flac-0.1.1.tar.gz'
+  md5 '145fb0982e6a845277e17218ddb2415c'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

@@ -110,9 +110,9 @@ def inc_all?
 end
 
 class Liquidsoap < Formula
-  url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.0.0/liquidsoap-1.0.0.tar.bz2'
+  url 'http://downloads.sourceforge.net/projects/savonet/files/liquidsoap/1.0.1/liquidsoap-1.0.1.tar.bz2'
   homepage 'http://liquidsoap.fm/'
-  md5 'de6e8530b128e5db213459be5b24659f'
+  md5 'c3a05596056d1c3f256e9c2e00f4ff27'
 
   unless MacOS.snow_leopard? or MacOS.lion? or MacOS.mountain_lion?
     onoe 'Sorry!'
