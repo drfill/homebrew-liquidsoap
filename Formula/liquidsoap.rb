@@ -1,9 +1,9 @@
 require 'formula'
 require 'etc'
 
-def gd?
-  ARGV.include? '--with-gd' or ARGV.include? '--with-all'
-end
+# def gd?
+#   ARGV.include? '--with-gd' or ARGV.include? '--with-all'
+# end
 
 def samplerate?
   ARGV.include? '--with-samplerate' or ARGV.include? '--with-all'
@@ -141,7 +141,7 @@ class Liquidsoap < Formula
   depends_on 'ocaml-speex' if speex?
   depends_on 'ocaml-theora' if theora? or video_processing?
   depends_on 'ocaml-schroedinger' if schroedinger? or video_processing?
-  depends_on 'ocaml-gd4o' if gd?
+  depends_on 'ocaml-gd4o' #if gd? or video_processing?
   depends_on "ocaml-samplerate" if samplerate?
   depends_on "ocaml-xmlm" if lastfm? or xmlplaylist?
   depends_on "ocaml-lastfm" if lastfm?
@@ -176,7 +176,7 @@ class Liquidsoap < Formula
       ['--with-gstreamer', "Enables GStreamer processing modules"],
       ['--with-ffmpeg', "Enables FFmpeg support"],
       ['--with-speech', "Enables Festival speech support (experimental)"],
-      ['--with-gd', "Enables GD library support"],
+      # ['--with-gd', "Enables GD library support"],
       ['--with-bjack', "Enables JACK Sound processing library support"],
       ['--with-ladspa', "Enables LADSPA Sound processing plugins"],
       ['--with-portaudio', "Enables PortAudio Sound library"],
@@ -220,7 +220,9 @@ class Liquidsoap < Formula
 
     args << "--with-cry-dir=/usr/lib" unless cry?
 
-    args << "--with-gd-dir=/usr/lib" unless gd?
+    # args << "--with-gd-dir=/usr/lib" unless gd?
+    #     
+    # args << "--with-default-font=/Library/Fonts/Verdana.ttf" if gd?
 
     args << "--with-samplerate-dir=/usr/lib" unless samplerate?
 
