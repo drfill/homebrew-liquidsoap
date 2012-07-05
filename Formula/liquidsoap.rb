@@ -110,7 +110,7 @@ def inc_all?
 end
 
 class Liquidsoap < Formula
-  url 'http://downloads.sourceforge.net/projects/savonet/files/liquidsoap/1.0.1/liquidsoap-1.0.1.tar.bz2'
+  url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.0.1/liquidsoap-1.0.1.tar.bz2'
   homepage 'http://liquidsoap.fm/'
   md5 'c3a05596056d1c3f256e9c2e00f4ff27'
 
