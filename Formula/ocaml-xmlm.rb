@@ -11,9 +11,9 @@ class OcamlXmlm < Formula
   def install
     ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
-    system "ocaml", "setup.ml", "-configure", "--prefix #{prefix}"
-    system "ocaml", "setup.ml", "-build"
+    system "ocaml setup.ml -configure --prefix #{prefix}"
+    system "ocaml setup.ml -build"
     mkdir_p "#{lib}/ocaml/site-lib"
-    system "ocaml", "setup.ml", "-install"
+    system "ocaml setup.ml -install"
   end
 end
