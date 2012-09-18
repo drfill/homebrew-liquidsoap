@@ -5,13 +5,13 @@ class OcamlCamlimages < Formula
   url 'https://bitbucket.org/camlspotter/camlimages/get/v4.0.1.tar.gz'
   md5 'd6b9494b56a72b65fd302d1858efff7c'
 
-  # TODO: libpng
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'omake' => :build
+  depends_on 'o-make' => :build
   depends_on 'libjpeg' => :build
   depends_on 'libtiff' => :build
   depends_on 'libxpm' => :build
+  depends_on 'libpng' => :build
   depends_on 'giflib' => :build
   depends_on 'ghostscript' => :build
 

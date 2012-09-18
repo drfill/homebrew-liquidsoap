@@ -96,7 +96,6 @@
 
 ## Todo
 
-* libpng support in camlimages (MacOSX native pnglib has no support)
 * Various Sound Daemons like ALSA and Pulseaudio
 
 ## Bugs and other caveats
