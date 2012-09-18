@@ -5,7 +5,7 @@
 ## Requirements
 
 * [Homebrew][homebrew]
-* [Snow Leopard or Lion][apple] - Untested against [Mountain Lion][mountainlion] (Unknown)
+* [Snow Leopard, Lion][apple] and [Mountain Lion][osx]
 * [Intel x86 and x64 processor][intel] (does not compile on [PowerPC][ppc] or [other old mac's][oldmacs])
 
 ## Installation
@@ -46,9 +46,6 @@
 
     --with-flac
             Enables Flac library support
-
-    --with-gd
-            Enables GD library support
 
     --with-gstreamer
             Enables GStreamer processing modules
@@ -123,7 +120,7 @@ full on http://savonet.hg.sourceforge.net/hgweb/savonet/savonet/raw-file/6e8a95e
 
 [homebrewhome]:http://mxcl.github.com/homebrew/
 [homebrew]:https://github.com/mxcl/homebrew/wiki/installation
-[mountainlion]:http://www.apple.com/macosx/mountain-lion/
+[osx]:http://www.apple.com/osx/
 [apple]:http://apple.com
 [intel]:http://intel.com
 [ppc]:https://www-01.ibm.com/chips/techlib/techlib.nsf/products/PowerPC
