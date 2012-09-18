@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlEasyFormat < Formula
   homepage 'http://mjambon.com/'
-  url 'http://mjambon.com/easy-format-1.0.0.tar.gz'
-  md5 'bbb01bbf67cf3f578a84381c9b1f79d9'
+  url 'http://mjambon.com/releases/easy-format/easy-format-1.0.1.tar.gz'
+  md5 'ecaf5d060f7cf8961631ab319e40677c'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

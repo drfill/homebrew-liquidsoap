@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlBiniou < Formula
   homepage 'http://mjambon.com/'
-  url 'http://mjambon.com/biniou-1.0.0.tar.gz'
-  md5 '0c80fec922ce698488d4f9e55ac26612'
+  url 'http://mjambon.com/releases/biniou/biniou-1.0.5.tar.gz'
+  md5 '04faafa8c3f1e3fe6e82d78330da46a0'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
