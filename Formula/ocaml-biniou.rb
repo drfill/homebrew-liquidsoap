@@ -13,6 +13,7 @@ class OcamlBiniou < Formula
     ENV.j1
     ENV.append "OCAMLPATH", "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
+    system "make clean"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
     system "make install"
