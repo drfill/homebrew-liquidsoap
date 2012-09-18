@@ -200,67 +200,9 @@ class Liquidsoap < Formula
             "--disable-ldconf",
            ]
 
-    args << "--with-ao-dir=/usr/lib" unless ao?
-
-    args << "--with-mad-dir=/usr/lib" unless mp3? or mad?
-
-    args << "--with-taglib-dir=/usr/lib" unless mp3? or mad?
-
-    args << "--with-lame-dir=/usr/lib" unless mp3?
-
-    args << "--with-flac-dir=/usr/lib" unless flac?
-
-    args << "--with-faad-dir=/usr/lib" unless aac?
-
-    args << "--with-speex-dir=/usr/lib" unless speex?
-
-    args << "--with-theora-dir=/usr/lib" unless theora? or video_processing?
-
-    args << "--with-schroedinger-dir=/usr/lib" unless schroedinger? or video_processing?
-
-    args << "--with-cry-dir=/usr/lib" unless cry?
-
-    # args << "--with-gd-dir=/usr/lib" unless gd?
-    #     
-    # args << "--with-default-font=/Library/Fonts/Verdana.ttf" if gd?
-
-    args << "--with-samplerate-dir=/usr/lib" unless samplerate?
-
-    args << "--with-xmlplaylist-dir=/usr/lib" unless xmlplaylist? or lastfm?
-
-    args << "--with-lastfm-dir=/usr/lib" unless lastfm?
-
-    args << "--with-soundtouch-dir=/usr/lib" unless soundtouch?
-
-    args << "--with-voaacenc-dir=/usr/lib" unless aac?
-
-    args << "--with-aacplus-dir=/usr/lib" unless aacplus?
-
-    args << "--with-lo-dir=/usr/lib" unless lo?
-
-    args << "--disable-graphics" unless video_processing?
-
-    args << "--with-gavl-dir=/usr/lib" unless video_processing?
-
-    args << "--with-camlimages-dir=/usr/lib" unless video_processing?
-
-    args << "--with-bjack-dir=/usr/lib" unless bjack?
-
-    args << "--with-ladspa-dir=/usr/lib" unless ladspa?
-
-    args << "--with-portaudio-dir=/usr/lib" unless portaudio?
-
-    # Gstreamer bug
-    if gstreamer?
-      opoo 'Sorry!'
-      opoo 'Gstreamer could not compile due to errors...'
-      opoo 'Issue on https://github.com/drfill/homebrew-liquidsoap/issues/4'
-    end
-    args << "--with-gstreamer-dir=/usr/lib"
-
-    rev = self.version.to_s + '-macosx-snow-leopard' if MacOS.snow_leopard?
-    rev = self.version.to_s + '-macosx-lion' if MacOS.lion?
-    rev = self.version.to_s + '-macosx-mountain-lion' if MacOS.mountain_lion?
+    rev = self.version+'-macosx-snow-leopard' if MacOS.snow_leopard?
+    rev = self.version+'-macosx-lion' if MacOS.lion?
+    rev = self.version+'-macosx-mountain-lion' if MacOS.mountain_lion?
 
     ENV.append 'MAKEFLAGS', "-j2"
     ENV.append 'OCAMLPATH', "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
