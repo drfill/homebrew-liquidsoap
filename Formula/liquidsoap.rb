@@ -200,9 +200,9 @@ class Liquidsoap < Formula
             "--disable-ldconf",
            ]
 
-    rev = self.version+'-macosx-snow-leopard' if MacOS.snow_leopard?
-    rev = self.version+'-macosx-lion' if MacOS.lion?
-    rev = self.version+'-macosx-mountain-lion' if MacOS.mountain_lion?
+    rev = self.version.to_s + '-macosx-snow-leopard' if MacOS.snow_leopard?
+    rev = self.version.to_s + '-macosx-lion' if MacOS.lion?
+    rev = self.version.to_s + '-macosx-mountain-lion' if MacOS.mountain_lion?
 
     ENV.append 'MAKEFLAGS', "-j2"
     ENV.append 'OCAMLPATH', "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
