@@ -7,12 +7,12 @@ class OcamlGd4o < Formula
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
+  depends_on 'freetype' => :build
   depends_on 'libzip' => :build
   depends_on 'jpeg' => :build
   depends_on 'gd' => :build
 
   def install
-    ENV.x11
     ENV.j1
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
     inreplace "Makefile", "CFLAGS = $(CINCLUDES)", "CFLAGS += $(CINCLUDES)"
