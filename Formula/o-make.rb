@@ -1,7 +1,7 @@
 require 'formula'
 
 class OMake < Formula
-  url 'http://omake.metaprl.org/downloads/omake-0.9.8.6-0.rc1.tar.gz'
+  url 'http://omake.metaprl.org/downloads/omake-0.9.8.5-3.tar.gz'
   homepage 'http://omake.metaprl.org/'
   sha1 'e78c9d8858749f5e234cba303637980e24085cbc'
 

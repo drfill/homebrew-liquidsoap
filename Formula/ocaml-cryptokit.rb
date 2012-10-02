@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlCryptokit < Formula
   homepage 'http://gallium.inria.fr/~xleroy/software.html#cryptokit'
-  url 'http://forge.ocamlcore.org/frs/download.php/639/cryptokit-1.5.tar.gz'
-  md5 '4393bf2b20f8e18eb732c078d582d5ec'
+  url 'http://forge.ocamlcore.org/frs/download.php/891/cryptokit-1.6.tar.gz'
+  md5 '341a4ca2db7fc7755b08d2e54a6874e1'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

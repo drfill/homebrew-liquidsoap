@@ -7,7 +7,7 @@ class OcamlCamlimages < Formula
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'o-make' => :build
+  #depends_on 'o-make' => :build
   depends_on 'libjpeg' => :build
   depends_on 'libtiff' => :build
   depends_on 'libxpm' => :build
