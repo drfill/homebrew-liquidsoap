@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlNet < Formula
   homepage 'http://projects.camlcity.org/projects/ocamlnet.html'
-  url 'http://download.camlcity.org/download/ocamlnet-3.5.1.tar.gz'
-  md5 '9f4f474bfe88496220079e06791ff31c'
+  url 'http://download.camlcity.org/download/ocamlnet-3.6.tar.gz'
+  md5 'c6a42744c456b3b336c7613f5481650a'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlFaad < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-faad/0.3.0/ocaml-faad-0.3.0.tar.gz'
-  md5 '81571625e9c3a86044bb3ad82c71c82e'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-faad/0.3.1/ocaml-faad-0.3.1.tar.gz'
+  md5 '6c6d55b523eaf019db2739ba940df243'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

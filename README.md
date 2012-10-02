@@ -16,7 +16,7 @@
 
 ### Installing homebrew-liquidsoap Formulae
 
-`brew install liquidsoap`
+`brew install liquidsoap --env=std`
 
 ### Options available in homebrew-liquidsoap formula
 
@@ -101,8 +101,8 @@
 ## Bugs and other caveats
 
 * Lame library compiled in only if CPU x64
-* Gstreamer
 * DSSI
+* Homebrew "Superenv" breaking build some formula
 
 ## License
 
