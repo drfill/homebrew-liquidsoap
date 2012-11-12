@@ -207,6 +207,11 @@ class Liquidsoap < Formula
     ENV.append 'MAKEFLAGS', "-j2"
     ENV.append 'OCAMLPATH', "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append 'OCAMLFIND_DESTDIR', "#{lib}/ocaml/site-lib"
+    # Workaround for caml 4.0, remove Makefile variable.
+    # Should be removed with the next liquidsoap release
+    # (patched upstream).
+    inreplace "Makefile.defs.in", "NEED_TCP_NODELAY=@NEED_TCP_NODELAY@", "NEED_TCP_NODELAY="
+    inreplace "src/tools/liq_sockets.ml.in", "@TCP_NODELAY_VALUE@", "let set_tcp_nodelay fd v = Unix.setsockopt fd Unix.TCP_NODELAY v"
     inreplace "configure", "dummy text2wave", "dummy text2wave.sh" if speech?
     inreplace "configure", self.version, rev
     system './configure', "--prefix=#{prefix}", *args
