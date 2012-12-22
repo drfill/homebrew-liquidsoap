@@ -23,22 +23,26 @@ class SpeechTools < Formula
 end
 
 __END__
---- a/include/EST_math.h	2012-06-05 13:39:44.000000000 +0400
-+++ b/include/EST_math.h	2012-06-05 13:40:26.000000000 +0400
-@@ -100,10 +100,12 @@
-
+--- a/include/EST_math.h  2012-06-05 13:39:44.000000000 +0400
++++ b/include/EST_math.h  2012-12-22 21:28:12.000000000 +0400
+@@ -100,10 +100,16 @@
+ 
  /* Apple OSX */
  #if defined(__APPLE__)
 -#define isnanf(X) isnan((double)(X))
 -/* on some previous versions of OSX we seemed to need the following */
 -/* but not on 10.4 */
 -/* #define isnan(X) __isnan(X) */
-+#define isnanf(X) isnan(X)
-+#if (__GNUC__ >= 4)
-+#define isnan(X) __inline_isnan(X)
-+#else
-+#define isnan(X) __isnan(X)
-+#endif
++#  define isnanf(X) isnan(X)
++#  if (__GNUC__ >= 4)
++#    if __MAC_OS_X_VERSION_MAX_ALLOWED >= 1080
++#      define isnan(X) __inline_isnanf(X)
++#    else
++#      define isnan(X) __inline_isnan(X)
++#    endif
++#  else
++#    define isnan(X) __isnan(X)
++#  endif
  #endif
-
+ 
  /* FreeBSD *and other 4.4 based systems require anything, isnanf is defined */

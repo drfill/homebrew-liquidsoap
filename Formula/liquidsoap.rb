@@ -101,6 +101,10 @@ def cry?
   ARGV.include? '--with-shout' or ARGV.include? '--with-all'
 end
 
+def nographics?
+  ARGV.include? '--disable-graphics'
+end
+
 def build_doc?
   ARGV.include? '--with-doc'
 end
@@ -189,6 +193,7 @@ class Liquidsoap < Formula
       ['--with-dirac', "Enables Dirac video library support"],
       ['--with-shout', "Enables Icecast and Shoutcast  streaming library support"],
       ['--with-mp3', "**** (only 64 bit) **** \n\tEnables Lame MP3 library support"],
+      ['--disable-graphics', "Disables graphics support"],
     ].sort
   end
 
@@ -199,6 +204,7 @@ class Liquidsoap < Formula
             "--with-default-font=/Library/Fonts/Verdana.ttf",
             "--disable-ldconf",
            ]
+    args << "--disable-graphics" if nographics?
 
     rev = self.version.to_s + '-macosx-snow-leopard' if MacOS.snow_leopard?
     rev = self.version.to_s + '-macosx-lion' if MacOS.lion?
