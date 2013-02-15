@@ -21,3 +21,16 @@ class Libaacplus < Formula
     system "make install"
   end
 end
+
+__END__
+--- configure.ac.orig	2013-02-16 02:03:59.000000000 +0400
++++ configure.ac	2013-02-16 02:04:10.000000000 +0400
+@@ -5,7 +5,7 @@
+ #AM_INIT_AUTOMAKE([dist-bzip2])
+ AM_INIT_AUTOMAKE
+ 
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS(config.h)
+ AC_CONFIG_MACRO_DIR([m4])
+ # Checks for programs.
+ AC_PROG_CC
