@@ -9,6 +9,11 @@ class Libaacplus < Formula
   depends_on 'automake' => :build
   depends_on 'libtool' => :build
 
+  def patches
+      # configure.ac:8: error: 'AM_CONFIG_HEADER': this macro is obsolete. You should use the 'AC_CONFIG_HEADERS' macro instead.
+      DATA
+    end
+
   def install
     ENV.llvm if MacOS.xcode_version >= "4.2" # This fields contains dirty hack
     ENV.gcc if MacOS.xcode_version < "4.2"   # to provide ability install aacplus library
@@ -23,8 +28,8 @@ class Libaacplus < Formula
 end
 
 __END__
---- configure.ac.orig	2013-02-16 02:03:59.000000000 +0400
-+++ configure.ac	2013-02-16 02:04:10.000000000 +0400
+--- a/configure.ac	2013-02-16 02:03:59.000000000 +0400
++++ b/configure.ac	2013-02-16 02:04:10.000000000 +0400
 @@ -5,7 +5,7 @@
  #AM_INIT_AUTOMAKE([dist-bzip2])
  AM_INIT_AUTOMAKE
