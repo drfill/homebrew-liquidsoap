@@ -8,7 +8,6 @@ class OcamlXmlplaylist < Formula
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'ocaml-xmlm' => :build
-  depends_on 'ocaml-net' => :build
 
   def install
     ENV.j1

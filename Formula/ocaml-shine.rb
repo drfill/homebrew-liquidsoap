@@ -1,13 +1,13 @@
 require 'formula'
 
-class OcamlTaglib < Formula
+class OcamlShine < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-taglib/0.3.0/ocaml-taglib-0.3.0.tar.gz'
-  sha1 '26d8f96c315d5e4087a898eb1636b6b6be811516'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-shine/0.1.0/ocaml-shine-0.1.0.tar.gz'
+  sha1 '60dda107e675442c9b78773063635a383f60e037'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'taglib' => :build
+  depends_on 'libshine' => :build
 
   def install
     ENV.j1

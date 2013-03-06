@@ -1,13 +1,13 @@
 require 'formula'
 
-class OcamlTaglib < Formula
+class OcamlOpus < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-taglib/0.3.0/ocaml-taglib-0.3.0.tar.gz'
-  sha1 '26d8f96c315d5e4087a898eb1636b6b6be811516'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-opus/0.1.0/ocaml-opus-0.1.0.tar.gz'
+  sha1 '0ca59df824c10437693b6badae2f5de61571bb5f'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'taglib' => :build
+  depends_on 'opus' => :build
 
   def install
     ENV.j1

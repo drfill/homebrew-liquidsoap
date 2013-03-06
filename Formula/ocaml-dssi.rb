@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlDssi < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-dssi/0.1.0/ocaml-dssi-0.1.0.tar.gz'
-  md5 '816bdbdf8a4fa842019367d07c3f6ac9'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-dssi/0.1.1/ocaml-dssi-0.1.1.tar.gz'
+  sha1 '63d1dc377739b1099019839bcf966de05e21508a'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

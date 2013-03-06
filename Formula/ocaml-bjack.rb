@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlBjack < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-bjack/0.1.3/ocaml-bjack-0.1.3.tar.gz'
-  md5 '13fcef846764e5856a095c6bcd67b3fd'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-bjack/0.1.4/ocaml-bjack-0.1.4.tar.gz'
+  sha1 'b4cbcdb83b088bd7f735f795bdb41b7dcb01aa26'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

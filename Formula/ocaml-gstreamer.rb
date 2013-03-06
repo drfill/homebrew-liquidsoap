@@ -2,14 +2,13 @@ require 'formula'
 
 class OcamlGstreamer < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-gstreamer/0.1.0/ocaml-gstreamer-0.1.0.tar.gz'
-  md5 'ca632b69425efffe60274568d02d672a'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-gstreamer/0.2.0/ocaml-gstreamer-0.2.0.tar.gz'
+  sha1 'cb47c34cd0a52d4b47828959615414947aff06d1'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'gstreamer' => :build
   depends_on 'gst-plugins-base' => :build
-  depends_on 'ocaml-idl' => :build
 
   def install
     ENV.j1

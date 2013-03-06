@@ -69,6 +69,10 @@ def ladspa?
   ARGV.include? '--with-ladspa' or ARGV.include? '--with-all'
 end
 
+def frei0r?
+  ARGV.include? '--with-frei0r' or ARGV.include? '--with-all'
+end
+
 def portaudio?
   ARGV.include? '--with-portaudio' or ARGV.include? '--with-all'
 end
@@ -83,6 +87,10 @@ end
 
 def flac?
   ARGV.include? '--with-flac' or ARGV.include? '--with-all'
+end
+
+def opus?
+    ARGV.include? '--with-opus' or ARGV.include? '--with-all'
 end
 
 def speex?
@@ -101,6 +109,10 @@ def cry?
   ARGV.include? '--with-shout' or ARGV.include? '--with-all'
 end
 
+def shine?
+    ARGV.include? '--with-shine' or ARGV.include? '--with-all'
+end
+
 def nographics?
   ARGV.include? '--disable-graphics'
 end
@@ -114,9 +126,9 @@ def inc_all?
 end
 
 class Liquidsoap < Formula
-  url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.0.1/liquidsoap-1.0.1.tar.bz2'
+  url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.1.0/liquidsoap-1.1.0.tar.bz2'
   homepage 'http://liquidsoap.fm/'
-  md5 'c3a05596056d1c3f256e9c2e00f4ff27'
+  sha1 '09f9e9c31314c9fad537422ae9ce9385562ee688'
 
   unless MacOS.snow_leopard? or MacOS.lion? or MacOS.mountain_lion?
     onoe 'Sorry!'
@@ -130,6 +142,7 @@ class Liquidsoap < Formula
   depends_on 'ocaml-dtools' => :build
   depends_on 'ocaml-duppy' => :build
   depends_on 'ocaml-cry' if cry? # This package contains an OCaml low level implementation of the shout protocol.
+  depends_on 'ocaml-shine' if shine?
   depends_on 'ocaml-pcre'
   depends_on 'ocaml-camomile'
   depends_on 'ocaml-magic'
@@ -141,6 +154,7 @@ class Liquidsoap < Formula
   depends_on 'ocaml-taglib' if mp3? or mad?
   depends_on 'ocaml-lame' if mp3?
   depends_on 'ocaml-flac' if flac?
+  depends_on 'ocaml-opus' if opus?
   depends_on 'ocaml-faad' if aac?
   depends_on 'ocaml-speex' if speex?
   depends_on 'ocaml-theora' if theora? or video_processing?
@@ -157,14 +171,14 @@ class Liquidsoap < Formula
   depends_on "ocaml-camlimages" if video_processing?
   depends_on "ocaml-gavl" if video_processing?
   depends_on 'ocaml-gstreamer' if gstreamer?
-  depends_on 'ffmpeg' if ffmpeg?
+  depends_on 'ocaml-ffmpeg' if ffmpeg?
   depends_on 'ocaml-portaudio' if portaudio?
   depends_on 'ocaml-bjack' if bjack?
   depends_on 'ocaml-ladspa' if ladspa?
+  depends_on 'ocaml-frei0r' if frei0r?
   depends_on 'sox' if speech?
   depends_on 'festival' if speech?
   depends_on 'XML::DOM' => :perl if build_doc?
-
   depends_on 'ocaml-mm' => :build # Depends on all available
 
   def options
@@ -213,11 +227,6 @@ class Liquidsoap < Formula
     ENV.append 'MAKEFLAGS', "-j2"
     ENV.append 'OCAMLPATH', "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append 'OCAMLFIND_DESTDIR', "#{lib}/ocaml/site-lib"
-    # Workaround for caml 4.0, remove Makefile variable.
-    # Should be removed with the next liquidsoap release
-    # (patched upstream).
-    inreplace "Makefile.defs.in", "NEED_TCP_NODELAY=@NEED_TCP_NODELAY@", "NEED_TCP_NODELAY="
-    inreplace "src/tools/liq_sockets.ml.in", "@TCP_NODELAY_VALUE@", "let set_tcp_nodelay fd v = Unix.setsockopt fd Unix.TCP_NODELAY v"
     inreplace "configure", "dummy text2wave", "dummy text2wave.sh" if speech?
     inreplace "configure", self.version, rev
     system './configure', "--prefix=#{prefix}", *args

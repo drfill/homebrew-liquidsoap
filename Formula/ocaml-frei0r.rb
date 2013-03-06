@@ -1,13 +1,13 @@
 require 'formula'
 
-class OcamlTaglib < Formula
+class OcamlFrei0r < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-taglib/0.3.0/ocaml-taglib-0.3.0.tar.gz'
-  sha1 '26d8f96c315d5e4087a898eb1636b6b6be811516'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-frei0r/0.1.0/ocaml-frei0r-0.1.0.tar.gz'
+  sha1 '6435221ae3432f521235a5ecba767c42c237e10d'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'taglib' => :build
+  depends_on 'frei0r' => :build
 
   def install
     ENV.j1

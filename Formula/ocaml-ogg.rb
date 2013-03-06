@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlOgg < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-ogg/0.4.3/ocaml-ogg-0.4.3.tar.gz'
-  md5 'c7315615800cc493b8d53e7b269a83c3'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-ogg/0.4.4/ocaml-ogg-0.4.4.tar.gz'
+  sha1 'b2496c143bc120e89bd18d29ff39593d5cc4a245'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

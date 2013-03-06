@@ -1,3 +1,5 @@
+# This Formula is no longer needed for liquidsoap and may be removed.
+
 require 'formula'
 
 class OcamlIdl < Formula

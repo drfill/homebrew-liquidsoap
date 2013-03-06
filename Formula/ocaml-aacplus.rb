@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlAacplus < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-aacplus/0.2.0/ocaml-aacplus-0.2.0.tar.gz'
-  md5 '0fdcd34079c59c9e69ba6d79aa5d4c15'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-aacplus/0.2.1/ocaml-aacplus-0.2.1.tar.gz'
+  sha1 '72958c5cea46dc63eb6af1a6d5e47836d918e04b'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

@@ -1,13 +1,13 @@
 require 'formula'
 
-class OcamlTaglib < Formula
+class OcamlFfmpeg < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-taglib/0.3.0/ocaml-taglib-0.3.0.tar.gz'
-  sha1 '26d8f96c315d5e4087a898eb1636b6b6be811516'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-ffmpeg/0.1.0/ocaml-ffmpeg-0.1.0.tar.gz'
+  sha1 '0b684b7c813a556eae58c1bdc712f7bdc9568d86'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'taglib' => :build
+  depends_on 'ffmpeg' => :build
 
   def install
     ENV.j1

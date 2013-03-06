@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlDuppy < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-duppy/0.4.2/ocaml-duppy-0.4.2.tar.gz'
-  md5 'e1826a03318edbffd8e7d2d7d893d92c'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-duppy/0.5.0/ocaml-duppy-0.5.0.tar.gz'
+  sha1 '926e12bc4b3a93b79079aac0558e5b2e960cb1d6'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
