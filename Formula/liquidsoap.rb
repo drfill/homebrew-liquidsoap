@@ -141,6 +141,7 @@ class Liquidsoap < Formula
     exit
   end
 
+  depends_on 'pkg-config' => :build
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'ocaml-dtools' => :build
