@@ -33,6 +33,10 @@ def aac?
   ARGV.include? '--with-aac' or ARGV.include? '--with-all'
 end
 
+def fdkaac?
+  ARGV.include? '--with-fdkaac' or ARGV.include? '--with-all'
+end
+
 def lo?
   ARGV.include? '--with-lo' or ARGV.include? '--with-all'
 end
@@ -156,6 +160,7 @@ class Liquidsoap < Formula
   depends_on 'ocaml-flac' if flac?
   depends_on 'ocaml-opus' if opus?
   depends_on 'ocaml-faad' if aac?
+  depends_on 'ocaml-fdkaac' if fdkaac?
   depends_on 'ocaml-speex' if speex?
   depends_on 'ocaml-theora' if theora? or video_processing?
   depends_on 'ocaml-schroedinger' if schroedinger? or video_processing?
@@ -168,7 +173,6 @@ class Liquidsoap < Formula
   depends_on "ocaml-aacplus" if aacplus?
   depends_on "ocaml-voaacenc" if aac?
   depends_on 'ocaml-lo' if lo?
-  depends_on "ocaml-camlimages" if video_processing?
   depends_on "ocaml-gavl" if video_processing?
   depends_on 'ocaml-gstreamer' if gstreamer?
   depends_on 'ocaml-ffmpeg' if ffmpeg?
@@ -249,73 +253,12 @@ class Liquidsoap < Formula
     s += <<-EOS.undent
         * There are no PulseAudio support
                 Reason: Build Failure (https://github.com/mxcl/homebrew/pull/9226)
-
+        * There are no camlimages support
+                Reason: Build Failure
     EOS
   end
 
   def test
-    # * Supported input formats
-    #    - Vorbis            : yes
-    #    - Theora            : yes
-    #    - Speex             : yes
-    #    - Dirac             : yes
-    #    - Flac (native)     : yes
-    #    - Flac (ogg)        : yes
-    #    - MP3               : yes
-    #    - AAC               : yes
-    #    - text-to-speech    : yes
-    #    - XML playlists     : yes
-    #    - Lastfm            : yes
-    #
-    #  * Supported output formats
-    #    - Vorbis            : yes
-    #    - MP3               : yes
-    #    - AAC               : yes
-    #    - AAC+              : yes
-    #    - SPEEX             : yes
-    #    - Theora            : yes
-    #    - Dirac             : yes
-    #
-    #  * Tags
-    #    - Taglib (ID3 tags) : yes
-    #    - Vorbis            : yes
-    #    - charset detection : yes
-    #
-    #  * Input / output
-    #    - Icecast/Shoutcast : yes
-    #    - AO                : yes
-    #    - OSS               : no
-    #    - ALSA              : no (requires alsa)
-    #    - Portaudio         : yes
-    #    - Pulseaudio        : no (requires pulseaudio)
-    #    - JACK              : yes
-    #    - GStreamer         : no (requires gstreamer)
-    #
-    #  * Audio manipulation
-    #    - Samplerate        : yes
-    #    - SoundTouch        : yes
-    #    - LADSPA            : yes
-    #
-    #  * Video manipulation
-    #    - Gavl              : yes
-    #    - camlimages        : yes
-    #
-    #  * MIDI manipulation
-    #    - DSSI              : no (requires dssi)
-    #
-    #  * Visualization
-    #    - Graphics          : yes
-    #    - SDL               : no (requires sdl)
-    #    - GD                : yes
-    #
-    #  * Additional libraries
-    #    - dynlink           : no (not available)
-    #    - magic             : yes
-    #    - lo                : yes
-    #    - yojson            : yes
-    #
-    #  * Graphical interfaces
-    #    - Python GUI        : no
     system "#{bin}/liquidsoap --version"
   end
 end
