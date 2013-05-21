@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlDtools < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-dtools/0.3.0/ocaml-dtools-0.3.0.tar.gz'
-  md5 '0cbf60f517a936244ad4d98c6d904907'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-dtools/0.3.1/ocaml-dtools-0.3.1.tar.gz'
+  sha1 '354f64c6b1b63d1a089bad9a487b20a315612702'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

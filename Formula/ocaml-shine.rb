@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlShine < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-shine/0.1.0/ocaml-shine-0.1.0.tar.gz'
-  sha1 '60dda107e675442c9b78773063635a383f60e037'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-shine/0.1.1/ocaml-shine-0.1.1.tar.gz'
+  sha1 'a8823d45430f6dc4b85fc6b73b4214feb9f383b1'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

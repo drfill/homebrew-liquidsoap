@@ -1,13 +1,13 @@
 require 'formula'
 
-class OcamlTaglib < Formula
+class OcamlFdkaac < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://downloads.sourceforge.net/project/savonet/ocaml-taglib/0.3.1/ocaml-taglib-0.3.1.tar.gz'
-  sha1 'c7cee257532e2467092007b10e1a406e3c8a9d96'
+  url 'http://downloads.sourceforge.net/project/savonet/ocaml-fdkaac/0.2.0/ocaml-fdkaac-0.2.0.tar.gz'
+  sha1 '70c81b21c712152001e7a94c0dc699eaae659b5c'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'taglib' => :build
+  depends_on 'fdk-aac' => :build
 
   def install
     ENV.j1

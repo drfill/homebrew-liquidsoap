@@ -2,8 +2,8 @@ require 'formula'
 
 class OcamlLame < Formula
   homepage 'http://liquidsoap.fm/'
-  url 'http://sourceforge.net/projects/savonet/files/ocaml-lame/0.3.1/ocaml-lame-0.3.1.tar.gz'
-  md5 '070d913c6e565b568da1bc491f232a8a'
+  url 'http://sourceforge.net/projects/savonet/files/ocaml-lame/0.3.2/ocaml-lame-0.3.2.tar.gz'
+  sha1 'a4dd496a58e3bd0bae47f8c6f82ebe8809a4afb5'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
