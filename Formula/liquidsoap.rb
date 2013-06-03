@@ -117,8 +117,8 @@ def shine?
     ARGV.include? '--with-shine' or ARGV.include? '--with-all'
 end
 
-def nographics?
-  ARGV.include? '--disable-graphics'
+def graphics?
+  ARGV.include? '--enable-graphics' or video_processing?
 end
 
 def build_doc?
@@ -223,7 +223,7 @@ class Liquidsoap < Formula
             "--with-default-font=/Library/Fonts/Verdana.ttf",
             "--disable-ldconf",
            ]
-    args << "--disable-graphics" if nographics?
+    args << "--disable-graphics" unless graphics?
 
     rev = self.version.to_s + '-macosx-snow-leopard' if MacOS.snow_leopard?
     rev = self.version.to_s + '-macosx-lion' if MacOS.lion?
