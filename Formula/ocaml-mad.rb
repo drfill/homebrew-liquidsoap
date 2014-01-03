@@ -7,7 +7,7 @@ class OcamlMad < Formula
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
-  depends_on 'libmad' => :build
+  depends_on 'mad' => :build
 
   def install
     ENV.j1
