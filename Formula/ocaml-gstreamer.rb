@@ -8,6 +8,7 @@ class OcamlGstreamer < Formula
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'gstreamer' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'gst-plugins-base' => :build
 
   def install

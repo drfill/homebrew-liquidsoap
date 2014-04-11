@@ -6,6 +6,7 @@ class OcamlShine < Formula
   sha1 'a8823d45430f6dc4b85fc6b73b4214feb9f383b1'
 
   depends_on 'objective-caml' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'libshine' => :build
 

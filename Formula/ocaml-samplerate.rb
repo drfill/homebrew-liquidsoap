@@ -7,6 +7,7 @@ class OcamlSamplerate < Formula
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'libsamplerate' => :build
 
   def install

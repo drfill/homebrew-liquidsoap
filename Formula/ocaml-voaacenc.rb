@@ -7,6 +7,7 @@ class OcamlVoaacenc < Formula
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'libvo-aacenc' => :build
 
   def install

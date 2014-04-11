@@ -7,6 +7,7 @@ class OcamlPortaudio < Formula
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'portaudio' => :build
 
   def install

@@ -8,6 +8,7 @@ class OcamlVorbis < Formula
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'ocaml-ogg' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'libvorbis' => :build
 
   def install

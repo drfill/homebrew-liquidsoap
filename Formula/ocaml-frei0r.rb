@@ -7,6 +7,7 @@ class OcamlFrei0r < Formula
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'frei0r' => :build
 
   def install
