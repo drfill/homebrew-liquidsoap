@@ -15,6 +15,7 @@ class OcamlVorbis < Formula
     ENV.j1
     ENV.append "OCAMLPATH", "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append "OCAMLFIND_DESTDIR", "#{lib}/ocaml/site-lib"
+    ENV["PKG_CONFIG_LIBDIR"] = "/usr/local/lib/pkgconfig:#{ENV["PKG_CONFIG_LIBDIR"]}"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     mkdir_p "#{lib}/ocaml/site-lib"
