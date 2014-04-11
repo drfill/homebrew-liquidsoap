@@ -16,7 +16,7 @@
 
 ### Installing homebrew-liquidsoap Formulae
 
-`brew install liquidsoap --env=std`
+`brew install liquidsoap`
 
 ### Options available in homebrew-liquidsoap formula
 
