@@ -1,9 +1,9 @@
 require 'formula'
 
 class OcamlPcre < Formula
-  homepage 'http://www.ocaml.info/home/ocaml_sources.html'
-  url 'https://bitbucket.org/mmottl/pcre-ocaml/downloads/pcre-ocaml-6.2.5.tar.gz'
-  md5 'a6f8873bbf5d2d0897654cc35fa59a42'
+  homepage 'http://mmottl.github.io/pcre-ocaml/'
+  url 'https://github.com/mmottl/pcre-ocaml/archive/v7.1.1.tar.gz'
+  md5 '7e5193553778803af71cc6a3cea242cc'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build
