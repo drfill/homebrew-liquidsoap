@@ -1,135 +1,135 @@
 require 'formula'
 require 'etc'
 
-# def gd?
-#   ARGV.include? '--with-gd' or ARGV.include? '--with-all'
-# end
-
-def samplerate?
-  ARGV.include? '--with-samplerate' or ARGV.include? '--with-all'
-end
-
-def xmlm?
-  ARGV.include? '--with-samplerate' or ARGV.include? '--with-all'
-end
-
-def lastfm?
-  ARGV.include? '--with-lastfm' or ARGV.include? '--with-all'
-end
-
-def xmlplaylist?
-  ARGV.include? '--with-xmlplaylist' or ARGV.include? '--with-all' or ARGV.include? '--with-lastfm'
-end
-
-def soundtouch?
-  ARGV.include? '--with-soundtouch' or ARGV.include? '--with-all'
-end
-
-def aacplus?
-  ARGV.include? '--with-aacplus' or ARGV.include? '--with-all'
-end
-
-def aac?
-  ARGV.include? '--with-aac' or ARGV.include? '--with-all'
-end
-
-def fdkaac?
-  ARGV.include? '--with-fdkaac' or ARGV.include? '--with-all'
-end
-
-def lo?
-  ARGV.include? '--with-lo' or ARGV.include? '--with-all'
-end
-
-def video_processing?
-  ARGV.include? '--with-video-processing' or ARGV.include? '--with-all'
-end
-
-def ffmpeg?
-  ARGV.include? '--with-ffmpeg' or ARGV.include? '--with-all'
-end
-
-def speech?
-  ARGV.include? '--with-speech' or ARGV.include? '--with-all'
-end
-
-def gstreamer?
-  ARGV.include? '--with-gstreamer' or ARGV.include? '--with-all'
-end
-
-def mad?
-  ARGV.include? '--with-mp3' or ARGV.include? '--with-all'
-end
-
-def mp3?
-  (ARGV.include? '--with-mp3' or ARGV.include? '--with-all') and Hardware.is_64_bit?
-end
-
-def bjack?
-  ARGV.include? '--with-bjack' or ARGV.include? '--with-all'
-end
-
-def ladspa?
-  ARGV.include? '--with-ladspa' or ARGV.include? '--with-all'
-end
-
-def frei0r?
-  ARGV.include? '--with-frei0r' or ARGV.include? '--with-all'
-end
-
-def portaudio?
-  ARGV.include? '--with-portaudio' or ARGV.include? '--with-all'
-end
-
-def soundtouch?
-  ARGV.include? '--with-soundtouch' or ARGV.include? '--with-all'
-end
-
-def ao?
-  ARGV.include? '--with-ao' or ARGV.include? '--with-all'
-end
-
-def flac?
-  ARGV.include? '--with-flac' or ARGV.include? '--with-all'
-end
-
-def opus?
-    ARGV.include? '--with-opus' or ARGV.include? '--with-all'
-end
-
-def speex?
-  ARGV.include? '--with-speex' or ARGV.include? '--with-all'
-end
-
-def theora?
-  ARGV.include? '--with-theora' or ARGV.include? '--with-all'
-end
-
-def schroedinger?
-  ARGV.include? '--with-dirac' or ARGV.include? '--with-all'
-end
-
-def cry?
-  ARGV.include? '--with-shout' or ARGV.include? '--with-all'
-end
-
-def shine?
-    ARGV.include? '--with-shine' or ARGV.include? '--with-all'
-end
-
-#def graphics?
-#  ARGV.include? '--enable-graphics' or video_processing?
-#end
-
-def build_doc?
-  ARGV.include? '--with-doc'
-end
-
-def inc_all?
-  ARGV.include? '--with-all'
-end
-
 class Liquidsoap < Formula
+  # def self.gd?
+  #   ARGV.include? '--with-gd' or ARGV.include? '--with-all'
+  # end
+
+  def self.samplerate?
+    ARGV.include? '--with-samplerate' or ARGV.include? '--with-all'
+  end
+
+  def self.xmlm?
+    ARGV.include? '--with-samplerate' or ARGV.include? '--with-all'
+  end
+
+  def self.lastfm?
+    ARGV.include? '--with-lastfm' or ARGV.include? '--with-all'
+  end
+
+  def self.xmlplaylist?
+    ARGV.include? '--with-xmlplaylist' or ARGV.include? '--with-all' or ARGV.include? '--with-lastfm'
+  end
+
+  def self.soundtouch?
+    ARGV.include? '--with-soundtouch' or ARGV.include? '--with-all'
+  end
+
+  def self.aacplus?
+    ARGV.include? '--with-aacplus' or ARGV.include? '--with-all'
+  end
+
+  def self.aac?
+    ARGV.include? '--with-aac' or ARGV.include? '--with-all'
+  end
+
+  def self.fdkaac?
+    ARGV.include? '--with-fdkaac' or ARGV.include? '--with-all'
+  end
+
+  def self.lo?
+    ARGV.include? '--with-lo' or ARGV.include? '--with-all'
+  end
+
+  def self.video_processing?
+    ARGV.include? '--with-video-processing' or ARGV.include? '--with-all'
+  end
+
+  def self.ffmpeg?
+    ARGV.include? '--with-ffmpeg' or ARGV.include? '--with-all'
+  end
+
+  def self.speech?
+    ARGV.include? '--with-speech' or ARGV.include? '--with-all'
+  end
+
+  def self.gstreamer?
+    ARGV.include? '--with-gstreamer' or ARGV.include? '--with-all'
+  end
+
+  def self.mad?
+    ARGV.include? '--with-mp3' or ARGV.include? '--with-all'
+  end
+
+  def self.mp3?
+    (ARGV.include? '--with-mp3' or ARGV.include? '--with-all') and Hardware.is_64_bit?
+  end
+
+  def self.bjack?
+    ARGV.include? '--with-bjack' or ARGV.include? '--with-all'
+  end
+
+  def self.ladspa?
+    ARGV.include? '--with-ladspa' or ARGV.include? '--with-all'
+  end
+
+  def self.frei0r?
+    ARGV.include? '--with-frei0r' or ARGV.include? '--with-all'
+  end
+
+  def self.portaudio?
+    ARGV.include? '--with-portaudio' or ARGV.include? '--with-all'
+  end
+
+  def self.soundtouch?
+    ARGV.include? '--with-soundtouch' or ARGV.include? '--with-all'
+  end
+
+  def self.ao?
+    ARGV.include? '--with-ao' or ARGV.include? '--with-all'
+  end
+
+  def self.flac?
+    ARGV.include? '--with-flac' or ARGV.include? '--with-all'
+  end
+
+  def self.opus?
+      ARGV.include? '--with-opus' or ARGV.include? '--with-all'
+  end
+
+  def self.speex?
+    ARGV.include? '--with-speex' or ARGV.include? '--with-all'
+  end
+
+  def self.theora?
+    ARGV.include? '--with-theora' or ARGV.include? '--with-all'
+  end
+
+  def self.schroedinger?
+    ARGV.include? '--with-dirac' or ARGV.include? '--with-all'
+  end
+
+  def self.cry?
+    ARGV.include? '--with-shout' or ARGV.include? '--with-all'
+  end
+
+  def self.shine?
+      ARGV.include? '--with-shine' or ARGV.include? '--with-all'
+  end
+
+  #def self.graphics?
+  #  ARGV.include? '--enable-graphics' or video_processing?
+  #end
+
+  def self.build_doc?
+    ARGV.include? '--with-doc'
+  end
+
+  def self.inc_all?
+    ARGV.include? '--with-all'
+  end
+
   url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.1.1/liquidsoap-1.1.1.tar.bz2'
   homepage 'http://liquidsoap.fm/'
   sha1 '4e7723807e5806085a95d3482f5465eb080c00a2'
@@ -232,7 +232,7 @@ class Liquidsoap < Formula
     ENV.append 'MAKEFLAGS', "-j2"
     ENV.append 'OCAMLPATH', "#{HOMEBREW_PREFIX}/lib/ocaml/site-lib"
     ENV.append 'OCAMLFIND_DESTDIR', "#{lib}/ocaml/site-lib"
-    inreplace "configure", "dummy text2wave", "dummy text2wave.sh" if speech?
+    inreplace "configure", "dummy text2wave", "dummy text2wave.sh" if self.class.speech?
     inreplace "configure", self.version, rev
     system './configure', "--prefix=#{prefix}", *args
     system 'make'
