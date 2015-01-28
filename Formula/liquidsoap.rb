@@ -236,7 +236,7 @@ class Liquidsoap < Formula
     inreplace "configure", self.version, rev
     system './configure', "--prefix=#{prefix}", *args
     system 'make'
-    system 'make', 'doc' if build_doc?
+    system 'make', 'doc' if self.class.build_doc?
     remove_file 'INSTALL'
     mkdir_p "#{var}/log/liquidsoap" unless File.directory? "#{var}/log/liquidsoap"
     mkdir_p "#{var}/run/liquidsoap" unless File.directory? "#{var}/run/liquidsoap"
