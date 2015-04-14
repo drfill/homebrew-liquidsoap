@@ -3,7 +3,7 @@ require 'formula'
 class OcamlOpus < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-opus/0.1.0/ocaml-opus-0.1.0.tar.gz'
-  sha1 '0ca59df824c10437693b6badae2f5de61571bb5f'
+  sha256 '8145382d4166caf90fad1b0f372860293cf7a7d64931f63f5198cb944d233964'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

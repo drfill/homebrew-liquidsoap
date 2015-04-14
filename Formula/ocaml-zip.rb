@@ -3,7 +3,7 @@ require 'formula'
 class OcamlZip < Formula
   homepage 'http://cristal.inria.fr/~xleroy/software.html#camlzip'
   url 'http://forge.ocamlcore.org/frs/download.php/328/camlzip-1.04.tar.gz'
-  md5 'b3930f4f2e2563b9a5e1b17aa455e635'
+  sha256 '76f5f88a468722e851b3a959ef93e7c61dffb877fbaafa2b71a7a7146e85ecfe'
 
   depends_on 'objective-caml' => :build
 

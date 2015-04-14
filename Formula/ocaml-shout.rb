@@ -6,7 +6,7 @@ class OcamlShout < Formula
   # Deprecated due to ocaml-cry
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-shout/0.2.7/ocaml-shout-0.2.7.tar.gz'
-  md5 '1e932cf83af693201f17f0f1dcddc47f'
+  sha256 '717fdcfed2833b27fe748e3fae5b932d61da855e98c3f66c00f3c62238be0fa3'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

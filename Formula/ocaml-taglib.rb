@@ -3,7 +3,7 @@ require 'formula'
 class OcamlTaglib < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-taglib/0.3.1/ocaml-taglib-0.3.1.tar.gz'
-  sha1 'c7cee257532e2467092007b10e1a406e3c8a9d96'
+  sha256 'b2dc23e1f3704ea7554787ea8affa764fa2cd13718ce16487884807c10a71942'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

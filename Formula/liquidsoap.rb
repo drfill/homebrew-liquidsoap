@@ -132,7 +132,7 @@ class Liquidsoap < Formula
 
   url 'http://sourceforge.net/projects/savonet/files/liquidsoap/1.1.1/liquidsoap-1.1.1.tar.bz2'
   homepage 'http://liquidsoap.fm/'
-  sha1 '4e7723807e5806085a95d3482f5465eb080c00a2'
+  sha256 '334476db397a5cebb0d9545f79ee84978bd1bf14197347707eb83a35f6e1c673'
 
   unless MacOS.snow_leopard? or MacOS.lion? or MacOS.mountain_lion?
     onoe 'Sorry!'

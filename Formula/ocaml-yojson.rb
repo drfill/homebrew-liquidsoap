@@ -3,7 +3,7 @@ require 'formula'
 class OcamlYojson < Formula
   homepage 'http://mjambon.com/'
   url 'http://mjambon.com/yojson-1.0.3.tar.gz'
-  md5 '9f19c943c9527e18ca624b5cefd79750'
+  sha256 'a8d36202ea2749b26c0e9d93ed1d9e74bd8aff94b32173ca0a99e896d957591b'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

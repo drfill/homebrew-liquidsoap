@@ -3,7 +3,7 @@ require 'formula'
 class OcamlVorbis < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://sourceforge.net/projects/savonet/files/ocaml-vorbis/0.6.1/ocaml-vorbis-0.6.1.tar.gz'
-  md5 'f56c3566d1485e5b5cb9aa75acbd9d0c'
+  sha256 '62200e0ed60393994a3e9e0ddc1894aade6ce6733d552edf468721882b95e026'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

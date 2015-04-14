@@ -3,7 +3,7 @@ require 'formula'
 class OcamlEasyFormat < Formula
   homepage 'http://mjambon.com/'
   url 'http://mjambon.com/releases/easy-format/easy-format-1.0.1.tar.gz'
-  md5 'ecaf5d060f7cf8961631ab319e40677c'
+  sha256 '4b1c030de944158d9e62ce30f59ae2c007ea87b492e92463d8aced22a858f403'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

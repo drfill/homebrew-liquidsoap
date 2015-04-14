@@ -3,7 +3,7 @@ require 'formula'
 class OcamlPortaudio < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-portaudio/0.2.0/ocaml-portaudio-0.2.0.tar.gz'
-  md5 'a2a0353dc0675bd611d50eacf278ab60'
+  sha256 '4c927f850438fef1f0bddf27ef2a56bf3fa3afbaeed03ad3d9cc0431dca35db6'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

@@ -3,7 +3,7 @@ require 'formula'
 class OcamlXmlm < Formula
   homepage 'http://erratique.ch/software/xmlm'
   url 'http://erratique.ch/software/xmlm/releases/xmlm-1.1.0.tbz'
-  md5 '443bb4e06ee5f88bbd2bafd5641f903d'
+  sha256 'aeab520565f6769219b1e9b51b4ae4bd152615734ccb74117bfae9cb318a2185'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

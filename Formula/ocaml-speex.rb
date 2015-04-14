@@ -3,7 +3,7 @@ require 'formula'
 class OcamlSpeex < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-speex/0.2.0/ocaml-speex-0.2.0.tar.gz'
-  md5 'acfa92885fa94e46b888bdbc8fbc417a'
+  sha256 '19f592d796de024f59d6b64bc7f4e07c497b5fa255280ddabc6c78d2683f47a9'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

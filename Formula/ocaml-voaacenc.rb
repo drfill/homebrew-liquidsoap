@@ -3,7 +3,7 @@ require 'formula'
 class OcamlVoaacenc < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-voaacenc/0.1.0/ocaml-voaacenc-0.1.0.tar.gz'
-  md5 'b2cd855f586d4550758c3c6d4f28006d'
+  sha256 'd7cfe432dbe2f00f1b2eceff127b2d68be8557eeb1ece077cc5933f425eb1ffe'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

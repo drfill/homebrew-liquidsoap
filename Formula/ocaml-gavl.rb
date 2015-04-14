@@ -3,7 +3,7 @@ require 'formula'
 class OcamlGavl < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-gavl/0.1.5/ocaml-gavl-0.1.5.tar.gz'
-  sha1 'fafef225805e32d37636fd6d3f6e92f3d219922d'
+  sha256 '697baa3ca9a63997922294b937890c59f0d4f7329b8b059d16ecd467163dca6f'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

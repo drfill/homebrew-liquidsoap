@@ -3,7 +3,7 @@ require 'formula'
 class OcamlSyslog < Formula
   homepage 'http://homepage.mac.com/letaris/'
   url 'http://ftp.de.debian.org/debian/pool/main/s/syslog-ocaml/syslog-ocaml_1.4.orig.tar.gz'
-  md5 '3042185e6f511aea9956cd8f172b1a84'
+  sha256 '2d885a36e2acd32085fffe5396840b0f78704ebc4fdecd1efc6ed86e6809eda8'
   version '1.4'
 
   depends_on 'objective-caml' => :build

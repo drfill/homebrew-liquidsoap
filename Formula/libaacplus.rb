@@ -3,7 +3,7 @@ require 'formula'
 class Libaacplus < Formula
   homepage 'http://tipok.org.ua/node/17'
   url 'http://217.20.164.161/~tipok/aacplus/libaacplus-2.0.2.tar.gz'
-  md5 '3fc15d5aa91d0e8b8f94acb6555103da'
+  sha256 'b2cd22239c92fc322e954f3e7d8c51d998fea13e96e6f385a90c66dbf38c21a2'
 
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build

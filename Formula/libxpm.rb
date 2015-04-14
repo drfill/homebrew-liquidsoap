@@ -3,7 +3,7 @@ require 'formula'
 class Libxpm < Formula
   homepage 'http://xorg.freedesktop.org/'
   url 'http://xorg.freedesktop.org/releases/individual/lib/libXpm-3.5.7.tar.bz2'
-  md5 'cd15ee542d9f515538b4462a6f79d977'
+  sha256 '64701ae67ce5b0797307b75d8255bec3a0d371d0c50715ea618f5a68bcc92baa'
 
   def install
     ENV.x11

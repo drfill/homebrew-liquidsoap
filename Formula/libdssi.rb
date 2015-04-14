@@ -3,7 +3,7 @@ require 'formula'
 class Libdssi < Formula
   homepage 'http://dssi.sourceforge.net/'
   url 'http://downloads.sourceforge.net/project/dssi/dssi/1.1.1/dssi-1.1.1.tar.gz'
-  md5 '619ab73c883b02dc37ddb37001591f8b'
+  sha256 'f03d9e53c913990a83f21973ce873c770bd703fa87f0db327dc572be2ccd66bc'
 
   depends_on 'jack' => :build
   depends_on 'liblo' => :build

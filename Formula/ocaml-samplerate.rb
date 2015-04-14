@@ -3,7 +3,7 @@ require 'formula'
 class OcamlSamplerate < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-samplerate/0.1.2/ocaml-samplerate-0.1.2.tar.gz'
-  sha1 '9d7a12eadfb9ffb55aae9a05a9618981669d91c3'
+  sha256 '5755c2a6e453dc5932c9af305b4a0ebe3adce2ff422b3a868c30e772257ce27f'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

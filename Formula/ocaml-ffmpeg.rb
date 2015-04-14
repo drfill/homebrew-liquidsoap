@@ -3,7 +3,7 @@ require 'formula'
 class OcamlFfmpeg < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-ffmpeg/0.1.0/ocaml-ffmpeg-0.1.0.tar.gz'
-  sha1 '0b684b7c813a556eae58c1bdc712f7bdc9568d86'
+  sha256 'deae3f0ad9a080e8296a23d18e4c63751962cabc420ac9f53a2e8cf2a6827dfe'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

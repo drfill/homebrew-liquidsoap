@@ -3,7 +3,7 @@ require 'formula'
 class OcamlLastfm < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-lastfm/0.3.0/ocaml-lastfm-0.3.0.tar.gz'
-  md5 'b93778a4b67696b9bc22e3d68f8d0f5d'
+  sha256 '0a016bdbe9815e578ae53711c64c68698a3caf3888ec7318a9da61c35614e152'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

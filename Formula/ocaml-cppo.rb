@@ -3,7 +3,7 @@ require 'formula'
 class OcamlCppo < Formula
   homepage 'http://mjambon.com/'
   url 'http://mjambon.com/cppo-0.9.2.tar.gz'
-  md5 '8c583440a69762165ef82bfab65fe021'
+  sha256 'ee4693b16e82e0d7f9b955dc6d935c518958fdd87b8e9402cc54a52e6e03897f'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

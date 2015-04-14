@@ -3,7 +3,7 @@ require 'formula'
 class Libgavl < Formula
   homepage 'http://gmerlin.sourceforge.net/'
   url 'http://downloads.sourceforge.net/project/gmerlin/gavl/1.2.0/gavl-1.2.0.tar.gz'
-  md5 'f7dd25d3ef26a8d22f947e9383d251e7'
+  sha256 'f37d663d2c042f0903549f9df1ff2470cdb27d3370c767f560100d0d984c5c7b'
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

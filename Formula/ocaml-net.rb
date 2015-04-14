@@ -3,7 +3,7 @@ require 'formula'
 class OcamlNet < Formula
   homepage 'http://projects.camlcity.org/projects/ocamlnet.html'
   url 'http://download.camlcity.org/download/ocamlnet-3.6.tar.gz'
-  md5 'c6a42744c456b3b336c7613f5481650a'
+  sha256 '306c20aee6512be3564c0f39872b70f929c06e1e893cfcf528ac47ae35cf7a69'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

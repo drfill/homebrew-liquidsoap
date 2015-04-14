@@ -3,7 +3,7 @@ require 'formula'
 class OcamlCamomile < Formula
   url 'http://sourceforge.net/projects/camomile/files/camomile/0.8.3/camomile-0.8.3.tar.bz2'
   homepage 'http://camomile.sourceforge.net/'
-  md5 'c6476bdb4138d222bc14396a82205034'
+  sha256 '7e7640e369e3db3cb72910d113832c0bbaf48fd95478c521490e0353df19572c'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

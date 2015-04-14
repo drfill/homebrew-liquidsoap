@@ -3,7 +3,7 @@ require 'formula'
 class LadspaHeader < Formula
   homepage 'http://www.ladspa.org/'
   url 'http://www.ladspa.org/ladspa_sdk/ladspa.h.txt'
-  md5 '7550280c79d24228361a9762b63e5b7e'
+  sha256 'c72ceb7383f159a944bfe80b1b155795857026aea1155dbe4ecf1664354320ad'
   version '1.1'
 
   def install
