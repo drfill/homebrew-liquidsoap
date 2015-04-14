@@ -3,7 +3,7 @@ require 'formula'
 class OcamlDuppy < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-duppy/0.5.1/ocaml-duppy-0.5.1.tar.gz'
-  sha256 '899283ea242e4332e9d45a9d130dfca8bd9441ea856dbc1100f9c985ef1657db'
+  sha256 'f34778e2d7ce131472f851fdd2adb4623b520d25b4609142e22070af0be5f293'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

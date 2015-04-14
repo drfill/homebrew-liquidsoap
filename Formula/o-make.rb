@@ -3,7 +3,7 @@ require 'formula'
 class OMake < Formula
   url 'http://omake.metaprl.org/downloads/omake-0.9.8.5-3.tar.gz'
   homepage 'http://omake.metaprl.org/'
-  sha256 'f28a256a1e67c1ea34223217cbd7c66e79d56395630a1059644bef4c5de8129c'
+  sha256 '5b675e09f49ff8249a775798f25ab127515cf2fed39527b202784757a35eddad'
 
   depends_on 'objective-caml'
 

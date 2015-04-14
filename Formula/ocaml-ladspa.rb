@@ -3,7 +3,7 @@ require 'formula'
 class OcamlLadspa < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-ladspa/0.1.4/ocaml-ladspa-0.1.4.tar.gz'
-  sha256 '4cc3beef379a9c491b27ec4a1856178900c0f97f31b185a614c95277675a2d3b'
+  sha256 'd9dd45a4feb0b9982c890e22be7061311e5f4d6cea54bcf376bfb5ff786f13b8'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

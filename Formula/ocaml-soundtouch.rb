@@ -3,7 +3,7 @@ require 'formula'
 class OcamlSoundtouch < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-soundtouch/0.1.7/ocaml-soundtouch-0.1.7.tar.gz'
-  sha256 'c786eeaf349229e14829bd5013521fccc1a9db12502afb12b311b08c9d8131a0'
+  sha256 'be4d6c3ec944d23def1f08f61f20e466e107f9adf34e6b956651842c70ebd73c'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

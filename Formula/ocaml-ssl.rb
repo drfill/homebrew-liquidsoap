@@ -3,7 +3,7 @@ require 'formula'
 class OcamlSsl < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-ssl/0.4.6/ocaml-ssl-0.4.6.tar.gz'
-  sha256 'eadb6c45f291bee6ce012dda2fa27e78104fce59f9073013930f8e56f4ea05e8'
+  sha256 '1ff7fbc77bb5ec7b6bfdca045c6c7a51d4d98ed60a865f29e06dd91285ac9499'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

@@ -3,7 +3,7 @@ require 'formula'
 class OcamlGd4o < Formula
   homepage 'http://matt.gushee.net/software/gd4o/'
   url 'http://sourceforge.net/projects/gd4o/files/gd4o/1.0%20Alpha%205/gd4o-1.0a5.tar.gz'
-  sha256 '018b1977c4da84efd9eae4169a7eb4d4079aef7b5f9f5d5654b27248fe5c77a9'
+  sha256 'fa10b60a785e6734b6ac1b5a762f496b925502cfc848381cae7dfb75fe547eed'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

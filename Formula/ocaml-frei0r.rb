@@ -3,7 +3,7 @@ require 'formula'
 class OcamlFrei0r < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-frei0r/0.1.0/ocaml-frei0r-0.1.0.tar.gz'
-  sha256 '767a0c93b849452a6daee16bf4855d780995d6bbe9f9bf8c356983f2044de61d'
+  sha256 '6f726261976fbe612d328107b6946d012b6721f46115df14f9cdc2d4ffbf43a9'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

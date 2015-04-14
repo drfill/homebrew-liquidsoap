@@ -3,7 +3,7 @@ require 'formula'
 class OcamlXmlplaylist < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-xmlplaylist/0.1.3/ocaml-xmlplaylist-0.1.3.tar.gz'
-  sha256 '76baa2a51f71ffda3e911b4b2e7e001a0df1f919e42fd7d8a593081bf5a9e6cd'
+  sha256 'ec3cb23be863ac87a86e51cf9ca8898df0985a089c8154ff73dfd2ab8e144a9b'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

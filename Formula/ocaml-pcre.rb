@@ -3,7 +3,7 @@ require 'formula'
 class OcamlPcre < Formula
   homepage 'http://mmottl.github.io/pcre-ocaml/'
   url 'https://github.com/mmottl/pcre-ocaml/archive/v7.1.1.tar.gz'
-  sha256 '81e10db7154dfd848c5ee733bf1ba7a8d4477ca62acad263ff2d48827c51f2b3'
+  sha256 'c38232d32da2b9e76087605abe36433c0bc409cc92256a5ff9554a09cd7a445a'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

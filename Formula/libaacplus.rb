@@ -2,8 +2,8 @@ require 'formula'
 
 class Libaacplus < Formula
   homepage 'http://tipok.org.ua/node/17'
-  url 'http://217.20.164.161/~tipok/aacplus/libaacplus-2.0.2.tar.gz'
-  sha256 'b2cd22239c92fc322e954f3e7d8c51d998fea13e96e6f385a90c66dbf38c21a2'
+  url 'http://tipok.org.ua/downloads/media/aacplus/libaacplus/libaacplus-2.0.2.tar.gz'
+  sha256 '60dceb64d4ecf0be8d21661d5af2f214710f9d5b6ab389a5bdebf746baa7e1d7'
 
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build

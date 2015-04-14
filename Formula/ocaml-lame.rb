@@ -3,7 +3,7 @@ require 'formula'
 class OcamlLame < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://sourceforge.net/projects/savonet/files/ocaml-lame/0.3.2/ocaml-lame-0.3.2.tar.gz'
-  sha256 '5fff7ad700086103e27b21e4820bf67a799b0aff39fbbfdcb81132f8f1b17565'
+  sha256 'c039c37b81dab52117b8199473b18c96a53570066f76941aa3ead5a7a8b3b51c'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

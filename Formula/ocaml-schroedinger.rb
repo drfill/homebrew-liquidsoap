@@ -3,7 +3,7 @@ require 'formula'
 class OcamlSchroedinger < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-schroedinger/0.1.0/ocaml-schroedinger-0.1.0.tar.gz'
-  sha256 'edc1e7a3155e0aac78a51259c1a3cadbc9e685d7c2d8d208d90d7922ce8ae665'
+  sha256 '23e721cb494c1a40f59fee4757a642c92fdfd30e5dcd6e9965c320acb426c3ee'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

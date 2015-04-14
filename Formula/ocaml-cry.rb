@@ -3,7 +3,7 @@ require 'formula'
 class OcamlCry < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://sourceforge.net/projects/savonet/files/ocaml-cry/0.2.2/ocaml-cry-0.2.2.tar.gz'
-  sha256 '3a3b81c7b3b1a1e9c0f99ab2aa7bb713a5caf7a29f54d8b337def71daabea6d7'
+  sha256 'd6f1337a4036a21c50cf239ea95c48eafb5eebc63110cff70e13d57ed5ea7a82'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

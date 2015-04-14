@@ -3,7 +3,7 @@ require 'formula'
 class OcamlAo < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-ao/0.2.0/ocaml-ao-0.2.0.tar.gz'
-  sha256 '599286092b81fda8fff75f4644e0458788f2db05a7abef50c6539c6cf41109b9'
+  sha256 'c5f56b3aa95102cd9ce9af120f21800ff3d865bcf3106fe407a84ba4121e9874'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

@@ -3,7 +3,7 @@ require 'formula'
 class OcamlMagic < Formula
   homepage 'http://sourceforge.net/projects/ocaml-magic/'
   url 'http://sourceforge.net/projects/ocaml-magic/files/ocaml-magic/0.7/ocaml-magic-0.7.3.tar.gz'
-  sha256 '1d11057c568d8b3e677673fbf4696d60e86e741f475577e0cf78dabb09f2fd89'
+  sha256 'fd09e2208b1483062919f8aa57d24427584729a6a00b6cdf3133fda425870fbc'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

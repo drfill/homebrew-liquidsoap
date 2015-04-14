@@ -3,7 +3,7 @@ require 'formula'
 class OcamlFlac < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-flac/0.1.1/ocaml-flac-0.1.1.tar.gz'
-  sha256 '0ec1a055c5a46208fced5136db784114f93c61e8e44a9f8888e661a3c02479be'
+  sha256 '9f22dce6ad947fc436992eeb71a19bd9bb7c173543132c2b605fa3a7b02ac74a'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

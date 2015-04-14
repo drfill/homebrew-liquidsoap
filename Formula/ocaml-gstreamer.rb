@@ -3,7 +3,7 @@ require 'formula'
 class OcamlGstreamer < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-gstreamer/0.2.0/ocaml-gstreamer-0.2.0.tar.gz'
-  sha256 '256f4345da338148d510dbe57a3888624d5248ff8239124b5aacf3648ca0f9d7'
+  sha256 '242284d9c8c2eddd890a6fd6ca5ab0a0eb8819079d84d2cc6e59206f9e2af85d'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

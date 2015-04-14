@@ -3,7 +3,7 @@ require 'formula'
 class OcamlTheora < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-theora/0.3.0/ocaml-theora-0.3.0.tar.gz'
-  sha256 '0ee85f71b15335ba5d3d75745ea80b4ffa25c1b41b3f660eec05c63ca7fe41a2'
+  sha256 '89eef969c09615dd7035ad250ee3ac3ef8faf1d5fa052d2d5687b29c3a6060ce'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

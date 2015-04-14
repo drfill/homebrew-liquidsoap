@@ -3,7 +3,7 @@ require 'formula'
 class OcamlBiniou < Formula
   homepage 'https://github.com/mjambon/biniou/tree/v1.0.5/'
   url 'https://github.com/mjambon/biniou/archive/v1.0.5.zip'
-  sha256 '9aaf968a7f5074f14c5874591648fd647dc93444ce1311c62e03a707cf243e1d'
+  sha256 'b94c57abc68c7ed8e7ef3bde04df0101468aaceb7e0dfc2ce0cb84b0ba2be35a'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

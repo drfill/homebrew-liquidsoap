@@ -3,7 +3,7 @@ require 'formula'
 class OcamlDtools < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/ocaml-dtools/0.3.1/ocaml-dtools-0.3.1.tar.gz'
-  sha256 '119b6d172c3cf172714364c2e38544a78541d0a7dc44b267f6943a08c8e548e8'
+  sha256 '2c399001dc999be25998943c4fefa1dd4f6887f1ffe0b6ef4f1f1c8288b7ae2b'
 
   depends_on 'objective-caml' => :build
   depends_on 'ocaml-findlib' => :build

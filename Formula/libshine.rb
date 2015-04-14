@@ -3,7 +3,7 @@ require 'formula'
 class Libshine < Formula
   homepage 'http://liquidsoap.fm/'
   url 'http://downloads.sourceforge.net/project/savonet/shine/shine-2.0.0.tar.gz'
-  sha256 '80e6f518a66d9857b250759e3503dc6c596a993a979e27d25cb79f3c35e2ce97'
+  sha256 '54dc2219582e476ff854519fa1d7f9560323132f24b0ffb77dcf0da812edd5db'
 
   def install
     system "./configure", "--prefix=#{prefix}"
