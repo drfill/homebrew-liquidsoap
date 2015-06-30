@@ -6,6 +6,7 @@ class OcamlDuppy < Formula
   sha256 'f34778e2d7ce131472f851fdd2adb4623b520d25b4609142e22070af0be5f293'
 
   depends_on 'objective-caml' => :build
+  depends_on 'camlp4' => :build
   depends_on 'ocaml-findlib' => :build
   depends_on 'ocaml-pcre' => :build
 

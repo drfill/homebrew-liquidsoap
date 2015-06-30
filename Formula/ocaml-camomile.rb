@@ -6,6 +6,7 @@ class OcamlCamomile < Formula
   sha256 '94c8d65d417c90301f6b3b21e4b00e151c434a3e2d406c3d5b3363859034f27b'
 
   depends_on 'objective-caml' => :build
+  depends_on 'camlp4' => :build
   depends_on 'ocaml-findlib' => :build
 
   def install
