@@ -2,8 +2,8 @@ require 'formula'
 
 class LadspaHeader < Formula
   homepage 'http://www.ladspa.org/'
-  url 'http://www.ladspa.org/ladspa_sdk/ladspa.h.txt'
-  sha256 '1bd380baaf018be5e05323c192444adf058ed8a35b8cbf4c8a11519fc81cb036'
+  url 'https://web.archive.org/web/20150529032654/http://www.ladspa.org/ladspa_sdk/ladspa.h.txt'
+  sha256 'c72ceb7383f159a944bfe80b1b155795857026aea1155dbe4ecf1664354320ad'
   version '1.1'
 
   def install
